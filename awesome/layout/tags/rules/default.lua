@@ -23,8 +23,13 @@ return {
     terminal = function()
         return {
             rule = { },
-            except = {
-                class = "Alacritty"
+            except_any = {
+                class = {
+                    "Alacritty"
+                },
+                type = {
+                    "dialog"
+                }
             },
             properties = {
                 tag = "1"

@@ -127,7 +127,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey            }, "p",       applicationMenu,            {description = "Application Launcher",                  group = "launcher"}),
     -- settings
     awful.key({ "Mod4"            }, "s",       settingsPane,               {description = "Open Settings Pane",                    group = "launcher"}),
-    awful.key({ "Mod4"            }, "t",       function() naughty.notify({text = client.focus:get_xproperty("STEAM_GAME") .. ""}) end,               {description = "Test Keybind",                    group = "test"})
+    awful.key({ "Mod4"            }, "t",       function() naughty.notify({text = client.focus.type .. ""}) end,               {description = "Test Keybind",                    group = "test"})
 )
 
 

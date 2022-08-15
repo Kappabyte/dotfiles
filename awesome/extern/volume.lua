@@ -99,6 +99,7 @@ local set_default_source = function(i)
 end
 
 local get_volume = function(i)
+    if(audio.sink_list[i] == nil) then return 100 end
     local fd = io.popen("pactl get-sink-volume " .. audio.sink_list[i])
     local status = fd:read("*all")
     fd:close()

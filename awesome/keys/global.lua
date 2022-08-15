@@ -1,7 +1,7 @@
 local awful = require("awful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
-
+local naughty = require("naughty")
 local modkey = "Mod4"
 
 local focusNext = function()
@@ -126,7 +126,8 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey            }, "p",       applicationMenu,            {description = "Application Launcher",                  group = "launcher"}),
     -- settings
-    awful.key({ "Mod4"            }, "s",       settingsPane,               {description = "Open Settings Pane",                    group = "launcher"})
+    awful.key({ "Mod4"            }, "s",       settingsPane,               {description = "Open Settings Pane",                    group = "launcher"}),
+    awful.key({ "Mod4"            }, "t",       function() naughty.notify({text = client.focus:get_xproperty("STEAM_GAME") .. ""}) end,               {description = "Test Keybind",                    group = "test"})
 )
 
 

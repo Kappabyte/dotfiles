@@ -5,6 +5,8 @@ local floating = require(... .. ".floating")
 local titlebars = require(... .. ".titlebars")
 local tags = require(... .. ".tags")
 
+awesome.register_xproperty("STEAM_GAME", "number")
+
 awful.rules.rules = {
     -- All clients will match this rule.
     default.default(),

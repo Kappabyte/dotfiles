@@ -1,3 +1,12 @@
+-- Place all steam games on the games tab
+client.connect_signal("manage", function (c)
+    if(c:get_xproperty("STEAM_GAME")) then
+        c:tags {
+            c.screen.tags[5]
+        }
+    end
+end)
+
 return {
     web = function()
         return {
@@ -52,10 +61,9 @@ return {
         return {
             rule_any = { 
                 class = {
-                    "dolphin-emu"
-                },
-                name = {
-                    "Steam"
+                    "dolphin-emu",
+                    "Steam",
+                    "streaming_client"
                 }
             },
             properties = { 

@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cp -r awesome ~/.config/awesome
-cp -r picom ~/.config/picom
+cp -r awesome ~/.config
+cp -r picom ~/.config

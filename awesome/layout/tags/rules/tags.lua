@@ -25,7 +25,8 @@ return {
             rule_any = { 
                 class = { 
                     "jetbrains-idea-ce",
-                    "Code"
+                    "Code",
+                    "code-oss"
                 }
             },
             properties = { 

@@ -8,8 +8,3 @@
 # brainstormr=~/Projects/development/planetargon/brainstormr
 # cd $brainstormr
 #
-neofetch | lolcat
-
-alias install sudo pacman -S
-alias uninstall sudo pacman -R
-alias update sudo pacman -Syu

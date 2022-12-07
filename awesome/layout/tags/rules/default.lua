@@ -1,6 +1,5 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
-local naughty = require("naughty")
 
 local client = require("keys.client")
 
@@ -25,7 +24,8 @@ return {
             rule = { },
             except_any = {
                 class = {
-                    "Alacritty"
+                    "kitty",
+                    "Gcr-prompter"
                 },
                 type = {
                     "dialog"

@@ -3,8 +3,6 @@ local wibox = require('wibox')
 local beautiful = require('beautiful')
 local gears = require("gears")
 
-local naughty = require("naughty")
-
 
 -- ███████ ███████ ████████ ████████ ██ ███    ██  ██████  ███████ 
 -- ██      ██         ██       ██    ██ ████   ██ ██       ██      
@@ -77,9 +75,9 @@ return function(s)
 
                 local colourSelectedTags = function()
                     if objects[index].selected then
-                        self:get_children_by_id('indicator')[1].bg = "#47e686"
+                        self:get_children_by_id('indicator')[1].bg = beautiful.highlight_dark
                     elseif self:get_children_by_id('indicator')[1].hover then
-                        self:get_children_by_id('indicator')[1].bg = "#93fabc"
+                        self:get_children_by_id('indicator')[1].bg = beautiful.highlight_light
                     else
                         self:get_children_by_id('indicator')[1].bg = "#00000000"
                     end

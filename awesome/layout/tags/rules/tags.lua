@@ -1,11 +1,13 @@
 -- Place all steam games on the games tab
-client.connect_signal("manage", function (c)
-    if(c:get_xproperty("STEAM_GAME")) then
-        c:tags {
-            c.screen.tags[5]
-        }
-    end
-end)
+-- client.connect_signal("manage", function (c)
+--     if(c:get_xproperty("STEAM_GAME")) then
+--         c:tags {
+--             c.screen.tags[5]
+--         }
+--     end
+-- end)
+local awful = require("awful")
+local naughty = require("naughty")
 
 return {
     web = function()
@@ -59,12 +61,21 @@ return {
         }
     end,
     games = function()
+        awful.rules.add_rule_source("steam", function (c, props, callback) 
+            if(c:get_xproperty("STEAM_GAME")) then
+                props.tag = "games"
+                props.immune = true
+            end
+        end)
         return {
             rule_any = { 
                 class = {
                     "dolphin-emu",
                     "Steam",
-                    "streaming_client"
+                    "streaming_client",
+                    "PolyMC",
+                    "org-polymc-EntryPoint",
+                    "Minecraft.*"
                 }
             },
             properties = { 

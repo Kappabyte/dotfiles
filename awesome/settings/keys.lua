@@ -32,7 +32,7 @@ keys.fullscreen = {
 
 keys.moveToMaster = {
     mod = { keys.modKey },
-    key = "space"
+    key = "Home"
 }
 
 keys.changeScreen = {

@@ -19,6 +19,11 @@ dir="$HOME/.config/awesome/ui/rofi"
 # themes=($(ls -p --hide="launcher.sh" $dir))
 # theme="${themes[$(( $RANDOM % 16 ))]}"
 
+sleep $1
+
 rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
+ret=$?
+
+echo Return: $ret
 
 echo 'local awful = require("awful") ; awful.screen.focused():emit_signal("menu::close")' | awesome-client

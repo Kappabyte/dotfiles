@@ -36,8 +36,8 @@ return function(screen, offset)
         y = 0,
         width = screen.geometry.width - offset,
         height = height,
-        bg = "#232830",
-        fg = beautiful.fg_normal
+        bg = beautiful.bg_dark,
+        fg = beautiful.fg_dark
     }
 
     panel.setOffset = function(o) 

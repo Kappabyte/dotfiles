@@ -1,0 +1,21 @@
+Return: 0
+2022-12-07 14:34:41,098: Starting Lutris 0.5.11
+2022-12-07 14:34:41,262: Using NVIDIA drivers 525.60.11 for x86_64
+2022-12-07 14:34:41,262: GPU: NVIDIA GeForce RTX 2060
+2022-12-07 14:34:41,262: GPU: 10DE:1F08 1043:86AF (nvidia drivers)
+2022-12-07 14:34:41,262: i386 libgnutls.so.30 missing (needed by gnutls)
+2022-12-07 14:34:41,745: Runtime dxvk-cache-tool is not available locally
+2022-12-07 14:34:42,549: Non existent path: /home/avery/.local/share/lutris/runtime/dxvk-cache-tool
+2022-12-07 14:34:42,554: Runtime is fully updated.
+2022-12-07 14:34:45,647: Startup complete
+2022-12-07 14:35:22,938: No valid prefix detected in /home/avery/games/Installs/Linux/Lutris/origin, creating one...
+2022-12-07 14:35:22,939: Creating a win64 prefix in /home/avery/games/Installs/Linux/Lutris/origin
+2022-12-07 14:35:38,696: The game has run for a very short time, did it crash?
+2022-12-07 14:35:40,487: No valid prefix detected in /home/avery/games/Installs/Linux/Lutris/origin, creating one...
+2022-12-07 14:35:40,487: Creating a win64 prefix in /home/avery/games/Installs/Linux/Lutris/origin
+2022-12-07 14:35:48,231: No valid prefix detected in /home/avery/games/Installs/Linux/Lutris/origin, creating one...
+2022-12-07 14:35:48,232: Creating a win64 prefix in /home/avery/games/Installs/Linux/Lutris/origin
+2022-12-07 14:35:49,881: The game has run for a very short time, did it crash?
+2022-12-07 14:35:53,484: Wine prefix creation is taking longer than expected...
+2022-12-07 14:36:11,023: Wine prefix creation is taking longer than expected...
+2022-12-07 14:36:18,772: Wine prefix creation is taking longer than expected...

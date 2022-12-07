@@ -12,7 +12,6 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
-local menubar = require("menubar")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 
@@ -36,32 +35,21 @@ do
 
         naughty.notify({ preset = naughty.config.presets.critical,
                          title = "Oops, an error happened!",
-                         text = tostring(err) })
+                         text = tostring(err) .. "\n\n" .. debug.traceback() })
         in_error = false
     end)
 end
 -- }}}
+
+local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "default")
+beautiful.init(theme_path)
+beautiful.systray_max_rows = 2
 
 require("keys.global")
 require("notifications.handler")
 
 require("layout")
 require("ui")
-
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), "default")
-beautiful.init(theme_path)
-beautiful.systray_max_rows = 2
-
--- This is used later as the default terminal and editor to run.
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -82,9 +70,6 @@ end)
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
-
--- }}}
-
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
@@ -99,8 +84,6 @@ client.connect_signal("manage", function (c)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
 awful.spawn.with_shell("/home/avery/.config/awesome/autorun.sh")
@@ -109,7 +92,7 @@ awful.spawn.with_shell("picom --experimental-backends --backend glx")
 
 awful.spawn.with_shell("pactl set-default-sink main-mixer-in")
 
-awful.spawn.with_shell("pw-link -P main-mixer-out:capture_FL alsa_output.pci-0000_2d_00.1.hdmi-stereo:playback_FL")
-awful.spawn.with_shell("pw-link -P main-mixer-out:capture_FR alsa_output.pci-0000_2d_00.1.hdmi-stereo:playback_FR")
-awful.spawn.with_shell("pw-link -P alsa_input.pci-0000_2f_00.4.analog-stereo:capture_FL share-in:playback_FL")
-awful.spawn.with_shell("pw-link -P alsa_input.pci-0000_2f_00.4.analog-stereo:capture_FR share-in:playback_FR")
+awful.spawn.with_shell("pw-link -P main-mixer-out:capture_FL alsa_output.pci-0000_2f_00.4.analog-stereo.3:playback_FL")
+awful.spawn.with_shell("pw-link -P main-mixer-out:capture_FR alsa_output.pci-0000_2f_00.4.analog-stereo.3:playback_FR")
+awful.spawn.with_shell("pw-link -P alsa_input.pci-0000_2f_00.4.analog-stereo.2:capture_FL share-in:playback_FL")
+awful.spawn.with_shell("pw-link -P alsa_input.pci-0000_2f_00.4.analog-stereo.2:capture_FR share-in:playback_FR")

@@ -34,7 +34,7 @@ return function(screen)
         width = screen.geometry.width - 48 - 250,
         height = screen.geometry.height,
         bg = "#00000000",
-        fg = beautiful.fg_normal
+        fg = beautiful.fg_dark
     }
 
     panel.setVisible = function(v)

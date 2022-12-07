@@ -3,8 +3,6 @@ local wibox = require('wibox')
 local beautiful = require('beautiful')
 local gears = require('gears')
 
-local naughty = require("naughty")
-
 
 
 -- ███████ ███████ ████████ ████████ ██ ███    ██  ██████  ███████ 
@@ -60,7 +58,7 @@ return function(text, icon, getState, setState)
             },
             layout = wibox.layout.fixed.vertical
         },
-        bg = "#272c36",
+        bg = beautiful.bg_mid,
         --shape = gears.shape.rounded_rect,
         widget = wibox.container.background
     }

@@ -114,9 +114,9 @@ return function(s)
             create_callback = function(self, c, index, objects) --luacheck: no unused args
                 local colourSelectedTasks = function()
                     if c == client.focus then
-                        self:get_children_by_id('indicator')[1].bg = "#47e686"
+                        self:get_children_by_id('indicator')[1].bg = beautiful.highlight_dark
                     elseif self:get_children_by_id('indicator')[1].hover then
-                        self:get_children_by_id('indicator')[1].bg = "#93fabc"
+                        self:get_children_by_id('indicator')[1].bg = beautiful.highlight_light
                     else
                         self:get_children_by_id('indicator')[1].bg = "#00000000"
                     end

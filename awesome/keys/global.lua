@@ -1,8 +1,11 @@
 local awful = require("awful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
-local naughty = require("naughty")
 local modkey = "Mod4"
+
+local nextLayout = function()
+    awful.layout.inc(1)
+end
 
 local focusNext = function()
     awful.client.focus.byidx(1)
@@ -36,7 +39,7 @@ local goBack = function ()
 end
 
 local spawnTerminal = function () 
-    awful.spawn("alacritty") 
+    awful.spawn("kitty") 
 end
 
 local increaseMasterWidth = function () 
@@ -83,12 +86,17 @@ end
 
 local applicationMenu = function()
     awful.screen.focused():emit_signal("menu::open")
-    awful.spawn.with_shell("~/.config/awesome/ui/rofi/launcher.sh") 
+    awful.spawn.with_shell("~/.config/awesome/ui/rofi/launcher.sh 0.2") 
 end
 
 local settingsPane = function()
     awful.spawn.with_shell("pkill rofi")
     awful.screen.focused():emit_signal("menu::toggle")
+end
+
+local bluetooth = function()
+    awful.screen.focused():emit_signal("menu::open")
+    awful.spawn.with_shell("~/.config/awesome/ui/rofi/bluetooth.sh 0.2")
 end
 
 
@@ -102,6 +110,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "j",       focusNext,                  {description = "Focus Next By Index",                   group = "client"}),
     awful.key({ modkey,           }, "k",       focusPrev,                  {description = "Focus Previous by Index",               group = "client"}),
     -- Layout manipulation
+    awful.key({ modkey,           }, "x",       nextLayout,                 {description = "Next Layout",                           group = "client"}),
     awful.key({ modkey, "Shift"   }, "j",       swapNext,                   {description = "Swap with Next Client by Index",        group = "client"}),
     awful.key({ modkey, "Shift"   }, "k",       swapPrev,                   {description = "Swap with Previous Client by Index",    group = "client"}),
     awful.key({ modkey, "Control" }, "j",       focusNextScreen,            {description = "Focus the Next Screen",                 group = "screen"}),
@@ -127,7 +136,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey            }, "p",       applicationMenu,            {description = "Application Launcher",                  group = "launcher"}),
     -- settings
     awful.key({ "Mod4"            }, "s",       settingsPane,               {description = "Open Settings Pane",                    group = "launcher"}),
-    awful.key({ "Mod4"            }, "t",       function() naughty.notify({text = client.focus.type .. ""}) end,               {description = "Test Keybind",                    group = "test"})
+    awful.key({ "Mod4"            }, "b",       bluetooth,                  {description = "Open Bluetooth Settings",               group = "launcher"})
 )
 
 

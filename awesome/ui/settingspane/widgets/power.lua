@@ -2,7 +2,6 @@ local awful = require('awful')
 local wibox = require('wibox')
 local beautiful = require('beautiful')
 local gears = require("gears")
-local naughty = require("naughty")
 
 local button = require("ui.widgets.button")
 

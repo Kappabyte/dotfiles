@@ -39,10 +39,10 @@ return function(screen)
         screen = screen,
         x = screen.geometry.x,
         y = 0,
-        width = 250,
+        width = 1,
         height = screen.geometry.height,
-        bg = "#2e3540",
-        fg = beautiful.fg_normal
+        bg = beautiful.bg_light,
+        fg = beautiful.fg_dark
     }
 
     local volume_widget = volume(screen)
@@ -53,6 +53,11 @@ return function(screen)
         volume_widget.update()
         gain_widget.update()
         panel.visible = v
+    end
+    
+    panel.setWidth = function(v)
+        if v < 1 then v = 1 end
+        panel.width = v
     end
 
     panel:setup {

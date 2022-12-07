@@ -2,7 +2,6 @@ local awful = require('awful')
 local wibox = require('wibox')
 local beautiful = require('beautiful')
 local gears = require("gears")
-local naughty = require("naughty")
 
 local volume_data = require("extern.volume")
 
@@ -42,7 +41,7 @@ return function(screen)
             bar_shape           = gears.shape.rounded_rect,
             bar_height          = 3,
             bar_color           = "#353d4a",
-            bar_active_color    = "#47e686",
+            bar_active_color    = beautiful.highlight_dark,
             handle_color        = "#00000000",
             handle_width        = 3,
             value               = volume_data.get_volume(sink_index),
@@ -179,9 +178,6 @@ return function(screen)
     }
 
     bg.update = function()
-        naughty.notify({
-            text = "update"
-        })
         volume_data.update_source_list()
     end
 

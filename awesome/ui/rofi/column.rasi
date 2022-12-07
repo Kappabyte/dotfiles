@@ -20,7 +20,7 @@ configuration {
 
 * {
     background:                     #2e3540;
-    background-alt:              	#2e3540;
+    background-alt:              	#353d4a;
     background-bar:                 #2e3540;
     foreground:                     #FFFFFF;
     accent:			            	#EDEDED4d;
@@ -29,8 +29,8 @@ configuration {
 }
 
 window {
-    transparency:                   "real";
-    background-color:               @background;
+    transparency:                   "screenshot";
+    background-color:               rgba(0,0,0,0);
     text-color:                     @foreground;
 	border:							0px;
 	border-color:					@border;
@@ -45,14 +45,14 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						0.25% 0.75% 0% -0.25%;
-	background-color: 				@background-alt;
+	background-color: 				@background-bar;
 	text-color: 					@foreground;
     width:                          250px;
 	font:							"FantasqueSansMono Nerd Font 12";
 }
 
 entry {
-    background-color:               @background-alt;
+    background-color:               rgba(0,0,0,0);
     text-color:                     @foreground;
     placeholder-color:              @foreground;
     expand:                         true;
@@ -81,7 +81,7 @@ listview {
 }
 
 mainbox {
-    background-color:               @background-alt;
+    background-color:               rgba(255,0,0,0);
 	border:							0% 0% 0% 0%;
     border-radius:                  0% 0% 0% 0%;
 	border-color:					@accent;
@@ -90,7 +90,7 @@ mainbox {
 }
 
 element {
-    background-color:               @background-alt;
+    background-color:               @background-bar;
     text-color:                     @foreground;
     orientation:                    horizontal;
     border-radius:                  0%;

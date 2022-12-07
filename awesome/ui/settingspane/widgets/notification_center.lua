@@ -75,28 +75,15 @@ return function(screen)
         return dnd
     end
 
+    local updateNotifications
+
     local setDNDState = function(state)
         recent_notifications.clear()
-        if(state) then
-            recent_notifications.clear()
-            naughty.notify({
-                title = "Silent Mode",
-                text = "All future notifications will be silenced",
-                icon = os.getenv("HOME").."/.config/awesome/resources/images/icons/DND.svg"
-            })
-        else
-            recent_notifications.clear()
-            naughty.notify({
-                title = "Silent Mode",
-                text = "Silent mode has been disabled",
-                icon = os.getenv("HOME").."/.config/awesome/resources/images/icons/DND.svg"
-            })
-        end
         naughty.suspended = state
         dnd = state
+        updateNotifications()
     end
 
-    local updateNotifications
     updateNotifications = function()
         local recent = recent_notifications.get()
 
@@ -116,6 +103,52 @@ return function(screen)
         }
 
         table.insert(widgets, title_widget)
+
+        if dnd then
+            local widget = wibox.widget {
+                {
+                    {
+                        {
+                            image  = os.getenv("HOME").."/.config/awesome/resources/images/icons/DND.svg",
+                            resize = true,
+                            forced_height = 50,
+                            vertical_fit_policy = "auto",
+                            widget = wibox.widget.imagebox
+                        },
+                        margins = 5,
+                        widget = wibox.container.margin
+                    },
+                    {
+                        {
+                            {
+                                markup = "<b>" .. "Silent Mode" .. "</b>",
+                                valign = "center",
+                                widget = wibox.widget.textbox
+                            },
+                            left = 5,
+                            right = 5,
+                            widget = wibox.container.margin
+                        },
+                        {
+                            {
+                                text = "All future notifications will be silenced",
+                                valign = "center",
+                                widget = wibox.widget.textbox
+                            },
+                            left = 5,
+                            right = 5,
+                            widget = wibox.container.margin
+                        },
+                        layout = wibox.layout.align.vertical
+                    },
+                    layout = wibox.layout.fixed.horizontal
+                },
+                widget = wibox.container.background
+            }
+            table.insert(widgets, widget)
+            ns.children = widgets
+            return
+        end
 
         for i,notification in ipairs(recent) do
             local widget = wibox.widget {

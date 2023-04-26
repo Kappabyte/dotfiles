@@ -1,0 +1,34 @@
+{ config, pkgs, ... }: {
+    imports = [
+        # Global packages
+        ./packages.nix
+
+        # Enable global packages
+        ../../nixos/packages/dbus.nix
+        ../../nixos/packages/fish.nix
+        ../../nixos/packages/hyprland.nix
+        ../../nixos/packages/pipewire.nix
+        ../../nixos/packages/sddm.nix
+        ../../nixos/packages/xdg.nix
+        ../../nixos/packages/xorg.nix
+        ../../nixos/packages/plymouth.nix
+    ];
+        
+
+    # Set the timezone
+    time.timeZone = "America/Edmonton";
+
+    # Enable servies common to all machines
+    services.gvfs.enable = true;
+    programs.dconf.enable = true;
+
+    # Enable nix flake support
+    nix = {
+        package = pkgs.nixFlakes;
+        extraOptions = "experimental-features = nix-command flakes";
+    };
+    boot.initrd.systemd.enable = true;
+    boot.kernelParams = ["quiet"];
+    # Set the state version
+    system.stateVersion = "22.11";
+}

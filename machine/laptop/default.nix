@@ -8,7 +8,6 @@
 
         ## Set up the hardware
         ./hardware/hardware-configuration.nix
-        ./hardware/nvidia.nix
 
         ## Enable system specific packages
         ../../nixos/packages/steam.nix

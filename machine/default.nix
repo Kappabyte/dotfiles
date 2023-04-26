@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, user, home-manager, ... }:
+{ lib, inputs, nixpkgs, user, home-manager, nixos-hardware, ... }:
 
 let
     system = "x86_64-linux";
@@ -39,6 +39,9 @@ in {
             };
         };
         modules = [
+            nixos-hardware.nixosModules.microsoft-surface-pro-intel {
+                microsoft-surface.kernelVersion = "6.1.18";
+            }
             ./common
             ./laptop
             home-manager.nixosModules.home-manager {

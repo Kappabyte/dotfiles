@@ -14,5 +14,9 @@
                 color = "cyan";
             };
         };
+        cursorTheme = {
+            name = "Catppuccin-Mocha-Light-Cursors";
+            size = 48;
+        };
     };
 }

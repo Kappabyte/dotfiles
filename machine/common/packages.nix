@@ -29,6 +29,7 @@
         xdg-user-dirs
         gnome.gnome-keyring
         papirus-folders
+        catppuccin-cursors.mochaLight
     ];
 
     fonts.fonts = with pkgs; [

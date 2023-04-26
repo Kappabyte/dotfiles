@@ -4,7 +4,7 @@
     ${system-settings}
 
     # Some default env vars.
-    env = XCURSOR_SIZE,24
+    env = XCURSOR_SIZE,48
 
     # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
     input {
@@ -98,7 +98,7 @@
     exec-once=hyprpaper    
     # Focus Workspace 1
     exec-once=hyprctl dispatch workspace 1
-
+    exec-once=hyprctl setcursor Catppuccin-Mocha-Light-Cursors 48
     #See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
 

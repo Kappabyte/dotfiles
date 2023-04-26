@@ -22,7 +22,7 @@
 
         wofi
         waybar
-        swww
+        hyprpaper
 
         sddm-kcm
         

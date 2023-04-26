@@ -95,8 +95,7 @@
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     exec-once=waybar
-    exec-once=swww init && swww img /home/avery/.config/hypr/wallpaper.jpg
-    
+    exec-once=hyprpaper    
     # Focus Workspace 1
     exec-once=hyprctl dispatch workspace 1
 

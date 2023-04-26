@@ -17,7 +17,7 @@
         ../../nixos/users/avery.nix
     ];
 
-    programs.sway.enable = true;
+    services.xserver.libinput.touchpad.naturalScrolling = true;
 
     ## Set the hostname
     networking.hostName = "averys-desktop";

@@ -15,9 +15,10 @@
         kb_rules =
         follow_mouse = 2
         float_switch_override_focus = false
-
+        natural_scroll = true
         touchpad {
-            natural_scroll = no
+            natural_scroll = true
+            scroll_factor = 0.3
         }
 
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.

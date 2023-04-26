@@ -12,6 +12,7 @@
         ../../nixos/packages/xdg.nix
         ../../nixos/packages/xorg.nix
         ../../nixos/packages/plymouth.nix
+        ../../nixos/packages/ssh.nix
     ];
         
 

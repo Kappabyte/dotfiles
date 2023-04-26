@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
     users.users.avery = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "networkmanager" ];
     };
 }

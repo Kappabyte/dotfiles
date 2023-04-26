@@ -1,5 +1,8 @@
 { config, pkgs, ... }: {
     imports = [
+        # Set up hardware
+        ./hardware/network.nix
+
         # Global packages
         ./packages.nix
 

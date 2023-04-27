@@ -4,5 +4,7 @@
     environment.systemPackages = with pkgs; [
         iptsd
         obsidian
-    ];
+
+        brightnessctl
+        ];
 }

@@ -2,7 +2,7 @@
 settings = {
     left = ["wlr/workspaces" "hyprland/submap"];
     center = ["hyprland/window"];
-    right = ["tray" "pulseaudio" "clock"];
+    right = ["tray" "battery" "pulseaudio" "clock"];
 };
 in {
     imports = [

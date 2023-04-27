@@ -1,6 +1,6 @@
 { lib, inputs, pkgs, user, home-manager, ... }: let
 settings = ''
-monitor=eDP-1,2736x1824,0x0,1.7
+monitor=eDP-1,2736x1824,0x0,2
 '';
 in {
     imports = [

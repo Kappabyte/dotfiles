@@ -7,6 +7,7 @@
         firefox
         thunderbird
         cinnamon.nemo
+        discord
 
         vscode
         jetbrains.clion

@@ -6,6 +6,7 @@
         ./config/xdg.nix
         ./config/kitty.nix
         ./config/nvim
+        ./config/dunst.nix
     ];
 
     home = {

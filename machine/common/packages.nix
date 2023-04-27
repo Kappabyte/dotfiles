@@ -32,6 +32,7 @@
         catppuccin-cursors.mochaLight
         
         bluetuith
+        dunst
     ];
 
     # Force electron applications to use wayland

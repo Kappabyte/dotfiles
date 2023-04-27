@@ -97,9 +97,15 @@
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     exec-once=waybar
     exec-once=hyprpaper    
+    exec-once=dunst
+
     # Focus Workspace 1
     exec-once=hyprctl dispatch workspace 1
+    
+    # Set the cursor theme
     exec-once=hyprctl setcursor Catppuccin-Mocha-Light-Cursors 48
+    
+
     #See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
 

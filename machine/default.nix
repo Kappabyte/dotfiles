@@ -41,6 +41,7 @@ in {
         modules = [
             nixos-hardware.nixosModules.microsoft-surface-pro-intel {
                 microsoft-surface.kernelVersion = "6.1.18";
+                microsoft-surface.ipts.enable = lib.mkForce false; # Using a custom service that doesn't crash. See custom/services/iptsd.nix
             }
             ./common
             ./laptop

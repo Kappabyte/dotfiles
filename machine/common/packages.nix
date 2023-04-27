@@ -30,6 +30,8 @@
         gnome.gnome-keyring
         papirus-folders
         catppuccin-cursors.mochaLight
+        
+        bluetuith
     ];
 
     fonts.fonts = with pkgs; [

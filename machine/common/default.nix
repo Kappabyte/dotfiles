@@ -16,6 +16,7 @@
         ../../nixos/packages/xorg.nix
         ../../nixos/packages/plymouth.nix
         ../../nixos/packages/ssh.nix
+        ../../nixos/packages/bluetooth.nix
     ];
         
 

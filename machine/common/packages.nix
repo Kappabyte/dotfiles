@@ -34,6 +34,9 @@
         bluetuith
     ];
 
+    # Force electron applications to use wayland
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     fonts.fonts = with pkgs; [
         noto-fonts
         noto-fonts-emoji

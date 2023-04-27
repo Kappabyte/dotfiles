@@ -11,7 +11,7 @@
         publicShare = null;
         templates = null;
     };
-    
+
     dconf.settings = {
         "org/cinnamon/desktop/applications/terminal" = {
             exec = "kitty";

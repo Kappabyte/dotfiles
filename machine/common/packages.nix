@@ -8,7 +8,7 @@
         thunderbird
         cinnamon.nemo
         discord
-        syncthing
+        
         vscode
         jetbrains.clion
         jetbrains.idea-ultimate

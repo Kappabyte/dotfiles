@@ -6,7 +6,7 @@
     environment.systemPackages = with pkgs; [
         firefox
         thunderbird
-        cinnamon.nemo
+        cinnamon.nemo-with-extensions
         discord
         
         vscode

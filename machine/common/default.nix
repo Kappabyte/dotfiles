@@ -17,6 +17,8 @@
         ../../nixos/packages/plymouth.nix
         ../../nixos/packages/ssh.nix
         ../../nixos/packages/bluetooth.nix
+        ../../nixos/packages/xpadneo.nix
+        ../../nixos/packages/syncthing.nix
     ];
         
 

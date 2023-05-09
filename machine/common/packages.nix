@@ -6,9 +6,9 @@
     environment.systemPackages = with pkgs; [
         firefox
         thunderbird
-        cinnamon.nemo
+        cinnamon.nemo-with-extensions
         discord
-        syncthing
+        
         vscode
         jetbrains.clion
         jetbrains.idea-ultimate

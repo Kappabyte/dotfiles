@@ -7,6 +7,7 @@
         ./config/kitty.nix
         ./config/nvim
         ./config/dunst.nix
+        ./config/tmux.nix
     ];
 
     home = {

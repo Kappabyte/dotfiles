@@ -10,6 +10,10 @@
          end
 
          fish_ssh_agent
+         
+         if not set -q TMUX
+            exec tmux new -s avery
+         end
       '';
 
       functions = {

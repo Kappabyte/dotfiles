@@ -15,6 +15,7 @@
         cmake
         neofetch
         neovim
+        tmux
         wget
         git
         grc

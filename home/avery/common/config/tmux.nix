@@ -8,6 +8,7 @@
             tmuxPlugins.sessionist
             tmuxPlugins.resurrect
             tmuxPlugins.continuum
+            tmuxPlugins.sidebar
         ];
     };
 }

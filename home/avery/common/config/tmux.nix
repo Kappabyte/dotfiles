@@ -7,7 +7,13 @@
             tmuxPlugins.catppuccin
             tmuxPlugins.sessionist
             tmuxPlugins.resurrect
-            tmuxPlugins.continuum
+            {
+                plugin = tmuxPlugins.continuum;
+                extraConfig = ''
+                set -g @continuum-restore 'on'
+                set -g @continuum-save-interval '10'
+                '';
+            }
             tmuxPlugins.sidebar
         ];
     };

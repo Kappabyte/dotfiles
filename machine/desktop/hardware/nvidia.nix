@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
     hardware.nvidia = {
-        # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+        package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
         open = true;
         modesetting.enable = true;
     };

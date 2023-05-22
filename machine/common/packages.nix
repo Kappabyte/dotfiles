@@ -18,6 +18,7 @@
         tmux
         wget
         git
+        gh
         grc
 
         kitty

@@ -20,6 +20,7 @@
             cmp-nvim-lsp
             nvim-lspconfig
             lsp-zero-nvim
+            vim-be-good
         ];
 
         extraLuaConfig = ''

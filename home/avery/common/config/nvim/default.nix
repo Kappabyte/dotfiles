@@ -36,6 +36,7 @@
     home.packages = with pkgs; [
         ripgrep
         nodePackages.typescript-language-server
+        rust-analyzer
         rnix-lsp
     ];
 }

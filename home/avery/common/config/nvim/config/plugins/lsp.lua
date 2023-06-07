@@ -24,6 +24,6 @@ lsp.setup_nvim_cmp({
 
 -- When you don't have mason.nvim installed
 -- You'll need to list the servers installed in your system
-lsp.setup_servers({'tsserver', 'rnix'})
+lsp.setup_servers({'tsserver', 'rnix', 'rust_analyzer'})
 
 lsp.setup()

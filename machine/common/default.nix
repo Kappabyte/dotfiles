@@ -19,6 +19,7 @@
         ../../nixos/packages/bluetooth.nix
         ../../nixos/packages/xpadneo.nix
         ../../nixos/packages/syncthing.nix
+        ../../nixos/packages/usbmuxd.nix
     ];
         
 

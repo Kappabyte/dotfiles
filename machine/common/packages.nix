@@ -37,6 +37,7 @@
         bluetuith
         dunst
         libimobiledevice
+        ifuse
     ];
 
     # Force electron applications to use wayland

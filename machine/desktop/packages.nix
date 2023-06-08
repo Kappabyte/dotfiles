@@ -6,6 +6,9 @@
         cemu
 
         libsForQt5.kdenlive
+        openshot-qt
+        libsForQt5.libopenshot-audio
+        libsForQt5.libopenshot
         prismlauncher
         glxinfo
         pciutils

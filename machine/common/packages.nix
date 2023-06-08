@@ -9,6 +9,11 @@
         cinnamon.nemo-with-extensions
         discord
         
+        vlc
+        amberol
+        gthumb
+
+
         vscode
         jetbrains.clion
         jetbrains.idea-ultimate

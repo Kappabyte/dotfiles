@@ -4,6 +4,8 @@
     environment.systemPackages = with pkgs; [
         steam
         cemu
+        gamescope
+        steamtinkerlaunch
 
         libsForQt5.kdenlive
         openshot-qt

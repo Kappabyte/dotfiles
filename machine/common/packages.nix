@@ -21,6 +21,7 @@
         neofetch
         neovim
         tmux
+        tmux-sessionizer
         wget
         git
         gh

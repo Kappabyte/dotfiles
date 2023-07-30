@@ -7,14 +7,13 @@
 
         plugins = with pkgs.vimPlugins; [
             telescope-nvim
-            catppuccin-nvim
+            onedark-nvim
             nvim-treesitter.withAllGrammars
             undotree
             nvim-cmp
             luasnip
             nvim-gps
-            winbar-nvim
-            feline-nvim
+            lualine-nvim
             nvim-web-devicons
             nvim-tree-lua
             cmp-nvim-lsp

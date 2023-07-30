@@ -8,6 +8,7 @@
         ./config/nvim
         ./config/dunst.nix
         ./config/tmux.nix
+        ./config/hyprpaper
     ];
 
     home = {

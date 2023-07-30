@@ -1,7 +1,7 @@
 { lib, inputs, pkgs, user, home-manager, ... }: {
     programs.kitty = {
         enable = true;
-        theme = "Catppuccin-Mocha";
+        theme = "One Dark";
         font.name = "JetBrainsMono Nerd Font";
     };
 }

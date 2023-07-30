@@ -4,17 +4,11 @@
         mouse = true;
         prefix = "C-a";
         plugins = with pkgs; [
-            tmuxPlugins.catppuccin
-            tmuxPlugins.sessionist
-            tmuxPlugins.resurrect
-            {
-                plugin = tmuxPlugins.continuum;
-                extraConfig = ''
-                set -g @continuum-restore 'on'
-                set -g @continuum-save-interval '10'
-                '';
-            }
-            tmuxPlugins.sidebar
+            tmuxPlugins.onedark-theme
         ];
+        extraConfig = ''
+            bind C-j display-popup -E "tms switch"
+            bind C-o display-popup -E "tms"
+        '';
     };
 }

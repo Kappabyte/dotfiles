@@ -19,6 +19,7 @@
         jetbrains.idea-ultimate
         cmake
         neofetch
+        onefetch
         neovim
         tmux
         tmux-sessionizer

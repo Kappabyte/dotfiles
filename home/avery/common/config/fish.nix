@@ -3,8 +3,11 @@
         enable = true;
         interactiveShellInit = ''
             function fish_greeting
-                pwd
-                neofetch
+                if test -e .git/
+                    onefetch
+                else
+                    neofetch
+                end
             end
             function __fish_command_not_found_handler --on-event="fish_command_not_found"
                 echo $argv[1]: command not found

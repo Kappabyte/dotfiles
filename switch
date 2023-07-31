@@ -5,4 +5,4 @@ git add .
 git commit
 
 # switch
-sudo nixos-rebuild switch .#$1
+sudo nixos-rebuild switch --flake .#$1

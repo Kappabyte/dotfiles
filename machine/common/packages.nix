@@ -30,7 +30,7 @@
         kitty
 
         wofi
-        waybar
+        eww
         hyprpaper
 
         sddm-kcm

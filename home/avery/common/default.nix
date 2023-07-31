@@ -3,6 +3,7 @@
         # Configuration Files
         ./config/fish.nix
         ./config/gtk.nix
+        ./config/direnv.nix
         ./config/xdg.nix
         ./config/kitty.nix
         ./config/nvim

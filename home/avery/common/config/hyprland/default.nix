@@ -90,7 +90,7 @@
         sensitivity = -0.5
     }
 
-    windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
+    windowrulev2 = opacity 0.95,class:^(kitty)$
 
     # Example windowrule v1
     # windowrule = float, ^(kitty)$

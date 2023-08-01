@@ -2,11 +2,8 @@
     gtk = {
         enable = true;
         theme = {
-            name = "Catppuccin-Mocha-Standard-Teal-Dark";
-            package = pkgs.catppuccin-gtk.override {
-                accents = [ "teal" ];
-                variant = "mocha";
-            };
+            name = "One-Dark";
+            package = (pkgs.callPackage ../../../../custom/packages/onedark-gtk/default.nix {}); 
         };
         iconTheme = {
             name = "Papirus-Dark";

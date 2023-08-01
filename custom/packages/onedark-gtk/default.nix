@@ -18,8 +18,7 @@
     dontBuild = true;
     
     installPhase = ''
-        mkdir $out/share
-        mkdir $out/share/themes
+        mkdir -p $out/share/themes
         cp -r $src/One-Dark $out/share/themes/
     '';
 

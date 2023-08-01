@@ -15,7 +15,7 @@
         kb_rules =
         follow_mouse = 2
         float_switch_override_focus = false
-        natural_scroll = true
+        natural_scroll = false
         touchpad {
             natural_scroll = true
             scroll_factor = 0.3
@@ -30,7 +30,7 @@
         gaps_in = 5
         gaps_out = 20
         border_size = 2
-        col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        col.active_border = rgba(33ccffee)
         col.inactive_border = rgba(595959aa)
 
         layout = dwindle
@@ -41,11 +41,13 @@
 
         rounding = 10
         blur = yes
-        blur_size = 10
-        blur_passes = 5
+        blur_size = 5
+        blur_passes = 4
+        blur_xray = false
+        blur_ignore_opacity = false
         blur_new_optimizations = on
 
-        drop_shadow = yes
+        drop_shadow = no
         shadow_range = 10
         shadow_render_power = 3
         col.shadow = rgba(1a1a1aee)

@@ -20,6 +20,9 @@
     
     surface.ipts.enable = true;
 
+    nix.settings.trusted-users = [ "root" "avery" ];
+    services.openssh.enable = true;
+    services.openssh.settings.PermitRootLogin = "yes";
     ## Set the hostname
     networking.hostName = "averys-laptop";
 

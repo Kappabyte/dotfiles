@@ -95,7 +95,6 @@
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-    exec-once=waybar
     exec-once=hyprpaper    
     exec-once=dunst
 
@@ -171,7 +170,4 @@
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod, mouse:273, resizewindow
     '';
-    xdg.configFile."hypr/wallpaper.jpg" = {
-        source = ./wallpaper.jpg;
-    };
 }

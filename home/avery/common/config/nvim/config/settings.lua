@@ -3,7 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
-
+vim.o.cmdheight = 0
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

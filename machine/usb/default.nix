@@ -6,6 +6,9 @@
         # Global packages
         ./packages.nix
 
+	# Set up the hardware
+	./hardware/hardware-configuration.nix
+
         # Enable global packages
         ../../nixos/packages/dbus.nix
         ../../nixos/packages/fish.nix
@@ -17,11 +20,22 @@
         ../../nixos/packages/plymouth.nix
         ../../nixos/packages/ssh.nix
         ../../nixos/packages/bluetooth.nix
-        ../../nixos/packages/xpadneo.nix
-        ../../nixos/packages/syncthing.nix
-        ../../nixos/packages/usbmuxd.nix
+
+	# Add Users
+	../../nixos/users/avery.nix
     ];
-        
+    networking.hostName = "avery-usb";
+
+    boot.loader = {
+	efi = {
+	    canTouchEfiVariables = false;
+	};
+	grub = {
+	    efiSupport = true;
+	    efiInstallAsRemovable = false;
+	    device = "/dev/disk/by-uuid/A253-2937";
+	};
+    };
 
     # Set the timezone
     time.timeZone = "America/Edmonton";
@@ -35,10 +49,9 @@
         package = pkgs.nixFlakes;
         extraOptions = "experimental-features = nix-command flakes";
     };
+    
     boot.initrd.systemd.enable = true;
     boot.kernelParams = ["quiet"];
     # Set the state version
     system.stateVersion = "22.11";
-
-
 }

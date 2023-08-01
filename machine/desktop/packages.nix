@@ -4,8 +4,13 @@
     environment.systemPackages = with pkgs; [
         steam
         cemu
+        gamescope
+        steamtinkerlaunch
 
         libsForQt5.kdenlive
+        openshot-qt
+        libsForQt5.libopenshot-audio
+        libsForQt5.libopenshot
         prismlauncher
         glxinfo
         pciutils

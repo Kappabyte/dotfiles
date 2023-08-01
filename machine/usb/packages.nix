@@ -5,24 +5,10 @@
     # System packages common to all machines
     environment.systemPackages = with pkgs; [
         firefox
-        thunderbird
-        cinnamon.nemo-with-extensions
-        discord
         
-        vlc
-        amberol
-        gthumb
-
-
-        vscode
-        jetbrains.clion
-        jetbrains.idea-ultimate
-        cmake
         neofetch
-        onefetch
         neovim
         tmux
-        tmux-sessionizer
         wget
         git
         gh
@@ -31,8 +17,6 @@
         kitty
 
         wofi
-        eww
-        hyprpaper
 
         sddm-kcm
         
@@ -40,11 +24,6 @@
         gnome.gnome-keyring
         papirus-folders
         catppuccin-cursors.mochaLight
-        
-        bluetuith
-        dunst
-        libimobiledevice
-        ifuse
     ];
 
     # Force electron applications to use wayland

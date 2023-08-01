@@ -12,7 +12,7 @@
         vlc
         amberol
         gthumb
-
+        pavucontrol
 
         vscode
         jetbrains.clion

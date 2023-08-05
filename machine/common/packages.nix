@@ -29,11 +29,11 @@
         grc
 
         kitty
-
         wofi
         eww
         hyprpaper
 
+        (pkgs.callPackage ../../custom/packages/khinsider/default.nix {}) 
         sddm-kcm
         
         xdg-user-dirs

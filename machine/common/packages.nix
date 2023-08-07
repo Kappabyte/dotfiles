@@ -4,19 +4,21 @@
     
     # System packages common to all machines
     environment.systemPackages = with pkgs; [
+        # Base apps
         firefox
         thunderbird
         cinnamon.nemo-with-extensions
         discord
+        kitty
         
+        # Media
         vlc
         amberol
         gthumb
         pavucontrol
 
+        # Development
         vscode
-        jetbrains.clion
-        jetbrains.idea-ultimate
         cmake
         neofetch
         onefetch
@@ -26,22 +28,25 @@
         wget
         git
         gh
-        grc
 
-        kitty
+        # Office/School
+        libreoffice-fresh       
 
+        # User Interface
+        sddm-kcm
         wofi
         eww
         hyprpaper
-
-        sddm-kcm
-        
-        xdg-user-dirs
-        gnome.gnome-keyring
         papirus-folders
         catppuccin-cursors.mochaLight
-        
+       
+        # Settings
         bluetuith
+        
+        # Background services
+        xdg-user-dirs
+        gnome.gnome-keyring
+        grc
         dunst
         libimobiledevice
         ifuse

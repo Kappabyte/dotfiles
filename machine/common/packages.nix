@@ -8,7 +8,7 @@
         firefox
         thunderbird
         cinnamon.nemo-with-extensions
-        discord
+        webcord-vencord
         kitty
         
         # Media

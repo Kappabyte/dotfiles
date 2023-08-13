@@ -15,6 +15,8 @@
 
             fish_ssh_agent
             
+            set DIRENV_LOG_FORMAT ""
+
             if not set -q TMUX
                 exec tmux new -A -s avery
             end

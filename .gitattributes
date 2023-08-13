@@ -1,2 +1,1 @@
-* linguist-vendored
-*.nix linguist-vendored=false
+*.qml linguist-vendored

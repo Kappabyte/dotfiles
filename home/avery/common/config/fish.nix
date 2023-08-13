@@ -13,10 +13,10 @@
                 echo $argv[1]: command not found
             end
 
+            alias clear "command clear && fish_greeting"
+
             fish_ssh_agent
             
-            set DIRENV_LOG_FORMAT ""
-
             if not set -q TMUX
                 exec tmux new -A -s avery
             end
@@ -62,6 +62,7 @@
             };
         };
         shellInit = ''
+        set -x DIRENV_LOG_FORMAT ""
         direnv hook fish | source
         '';
         plugins = [

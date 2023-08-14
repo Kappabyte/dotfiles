@@ -91,6 +91,8 @@
     }
 
     windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
+    layerrule = blur, gtk-layer-shell
+    layerrule = ignorezero, gtk-layer-shell
 
     # Example windowrule v1
     # windowrule = float, ^(kitty)$

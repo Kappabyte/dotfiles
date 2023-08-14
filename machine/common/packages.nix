@@ -49,6 +49,7 @@
         dunst
         libimobiledevice
         ifuse
+        socat
     ];
 
     # Force electron applications to use wayland

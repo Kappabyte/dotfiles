@@ -35,7 +35,6 @@
         # User Interface
         sddm-kcm
         wofi
-        eww
         hyprpaper
         papirus-folders
         catppuccin-cursors.mochaLight

@@ -52,15 +52,19 @@
         ifuse
         socat
         playerctl
+        grim
+        slurp
+        swappy
     ];
 
     # Force electron applications to use wayland
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
         noto-fonts
         noto-fonts-emoji
         font-awesome
+        font-awesome_5
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 }

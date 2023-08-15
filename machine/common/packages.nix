@@ -51,6 +51,7 @@
         libimobiledevice
         ifuse
         socat
+        playerctl
     ];
 
     # Force electron applications to use wayland

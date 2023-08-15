@@ -30,6 +30,8 @@
     services.gvfs.enable = true;
     programs.dconf.enable = true;
 
+    security.pam.services.swaylock = {};
+
     # Enable nix flake support
     nix = {
         package = pkgs.nixFlakes;

@@ -36,6 +36,7 @@
         sddm-kcm
         wofi
         hyprpaper
+        swaylock
         papirus-folders
         catppuccin-cursors.mochaLight
        

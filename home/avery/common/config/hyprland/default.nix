@@ -90,7 +90,6 @@
         sensitivity = -0.5
     }
 
-    windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
     layerrule = blur, gtk-layer-shell
     layerrule = ignorezero, gtk-layer-shell
 

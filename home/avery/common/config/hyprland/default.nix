@@ -30,8 +30,8 @@
         gaps_in = 5
         gaps_out = 20
         border_size = 2
-        col.active_border = rgba(33ccffee)
-        col.inactive_border = rgba(595959aa)
+        col.active_border = rgba(61AFEFFF)
+        col.inactive_border = rgba(ABB2BFFF)
 
         layout = dwindle
     }
@@ -39,7 +39,7 @@
     decoration {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
-        rounding = 10
+        rounding = 5
         blur = yes
         blur_size = 5
         blur_passes = 4
@@ -90,7 +90,9 @@
         sensitivity = -0.5
     }
 
-    windowrulev2 = opacity 0.95,class:^(kitty)$
+    windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
+    layerrule = blur, gtk-layer-shell
+    layerrule = ignorezero, gtk-layer-shell
 
     # Example windowrule v1
     # windowrule = float, ^(kitty)$

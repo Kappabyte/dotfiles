@@ -7,6 +7,7 @@
         ./packages.nix
 
         # Enable global packages
+        ../../nixos/packages/adb.nix
         ../../nixos/packages/dbus.nix
         ../../nixos/packages/fish.nix
         ../../nixos/packages/hyprland.nix
@@ -29,6 +30,8 @@
     # Enable servies common to all machines
     services.gvfs.enable = true;
     programs.dconf.enable = true;
+
+    security.pam.services.swaylock = {};
 
     # Enable nix flake support
     nix = {

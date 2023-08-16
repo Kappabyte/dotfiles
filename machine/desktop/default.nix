@@ -18,15 +18,11 @@
         ../../nixos/users/avery.nix
     ];
 
-    programs.sway.enable = true;
-
     ## Set the hostname
     networking.hostName = "averys-desktop";
 
     ## Enable the automount service
     services.automount.enable = true;
-
-    services.xserver.windowManager.i3.enable = true;
 
     ## Disable the second monitor when logging in
     services.xserver.displayManager.setupCommands = ''

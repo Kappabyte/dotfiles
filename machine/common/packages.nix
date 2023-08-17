@@ -36,7 +36,7 @@
         sddm-kcm
         wofi
         hyprpaper
-        swaylock
+        swaylock-effects
         papirus-folders
         catppuccin-cursors.mochaLight
        

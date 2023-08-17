@@ -6,8 +6,7 @@
         shellIntegration.enableFishIntegration = true;
         shellIntegration.enableBashIntegration = true;
         settings = {
-            background = "#282c33";
-            background_opacity = "0.8";
+            background_opacity = "0.9";
         };
     };
 }

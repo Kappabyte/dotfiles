@@ -1,0 +1,134 @@
+(deflisten splash "hyprctl splash")
+
+(deflisten weathericons "cat assets/weather/translation.json")
+(defpoll weather :interval "10m" "curl https://wttr.in/?format=j1")
+(defpoll github_issues :interval "10m" "widgets/scripts/gh_issues.sh")
+(defpoll github_repos :interval "10m" "widgets/scripts/gh_repos.sh")
+
+(defwidget weather []
+    (overlay :class "menu-widget"
+        (box :height 150 :class "widget-backdrop blue")
+        (box :height 150 :class "weather" :orientation "h" :space-evenly false
+            (image :width 100 :image-width 100 :path "assets/weather/${weather == "" ? "wi-refresh" : weathericons["${weather == "" ? "" : weather.current_condition[0].weatherCode}"]}.png")
+            (box :orientation "v" :space-evenly false :hexpand true
+                (label :xalign 0 :class "weather-location" :text "${weather == "" ? "" : "${weather.nearest_area[0].areaName[0].value}, ${weather.nearest_area[0].country[0].value}"}")
+                (box :class "weather-stats" :orientation "h" :space-evenly false
+                    (label :xalign 0 :class "weather-temp" :text "${weather == "" ? "" : weather.current_condition[0].temp_C}°C" :hexpand true)
+                    (box :orientation "v" :width 85
+                        (label :xalign 0 :text "High: ${weather == "" ? "" : weather.weather[0].maxtempC}°C")
+                        (label :xalign 0 :text "Low:  ${weather == "" ? "" : weather.weather[0].mintempC}°C")
+                    )
+                    (box :orientation "v" :width 85
+                        (label :xalign 0 :text "UV:   ${weather == "" ? "" : weather.weather[0].uvIndex}")
+                        (label :xalign 0 :text "Rain: ${weather == "" ? "" : weather.weather[0].hourly[0].chanceofrain}%")
+                    )
+                )
+            )
+        )
+    )
+)
+
+(defwidget search []
+    (overlay :class "menu-widget" :height 50
+        (box :class "widget-backdrop gray")
+        (eventbox :cursor "text"
+            (button :onclick "(wofi --show drun --allow-images&) && eww close home -c ${EWW_CONFIG_DIR} && eww update menu_open=\"false\" -c ${EWW_CONFIG_DIR}"
+                (label :class "black-text" :halign "start" :text "  ｜  Open Application...")
+            )
+        )
+    )
+)
+
+(defwidget shortcut_button [num]
+    (button :class "shortcut" :onclick "config/shortcuts.sh ${num - 1} && eww close home -c ${EWW_CONFIG_DIR} && eww update menu_open=\"false\" -c ${EWW_CONFIG_DIR}"
+        (image :image-width 30 :path "assets/shortcuts/${num}.png")
+    )
+)
+
+(defwidget shortcuts []
+    (overlay :class "menu-widget interactable" :height 200 :width 200
+        (box :class "widget-backdrop teal")
+        (eventbox :cursor "pointer"
+            (box :orientation "v"
+                (box :orientation "h"
+                    (shortcut_button :num 1)
+                    (shortcut_button :num 2)
+                    (shortcut_button :num 3)
+                )
+                (box :orientation "h"
+                    (shortcut_button :num 4)
+                    (shortcut_button :num 5)
+                    (shortcut_button :num 6)
+                )
+                (box :orientation "h"
+                    (shortcut_button :num 7)
+                    (shortcut_button :num 8)
+                    (shortcut_button :num 9)
+                )
+            )
+        )
+    )
+)
+
+(defwidget github []
+    (overlay :class "menu-widget"
+        (box :class "widget-backdrop dark")
+        (eventbox :cursor "pointer"
+            (button :onclick "widgets/scripts/gh_open.sh ${EWW_CONFIG_DIR}"
+                (box :height 100 :space-evenly false
+                    (label :class "logo" :text " ")
+                    (box :orientation "v"
+                        (label :xalign 0 :class "gh-name" :text "Kappabyte")
+                        (box :orientation "h" :space-evenly false :spacing 3
+                            (label :xalign 0 :class "gh-item" :text " ${github_issues != "" ? github_issues : "0"} Issues")
+                            (label :xalign 0 :class "gh-item" :text " ${github_repos != "" ? github_repos : "0"} Repos")
+                        )
+                    )
+                )
+            )
+        )
+    )
+)
+
+(defwidget monitor [color var max text suffix]
+    (overlay :class "menu-widget"
+        (circular-progress :value "${var / max * 100}" :thickness 5 :class "${color}-text" :start-at "75")
+        (label :text "${text} ${round(var, 1)}${suffix}" :class "${color}-text")
+    )
+)
+
+(defwidget power []
+    (box :class "power"
+        (eventbox :cursor "pointer" (button :onclick "pkill tmux; hyprctl dispatch exit&" "󰍃 "))
+        (eventbox :cursor "pointer" (button :onclick "swaylock&" "󱅞 "))
+        (eventbox :cursor "pointer" (button :onclick "hyprctl reload&" "󰑓 "))
+    )
+)
+
+(defwidget home []
+    (box :orientation "v" :class "element transparent border" :space-evenly false 
+        (box :space-evenly false :spacing 20
+            (box :class "bkelement" :orientation "v" :spacing 0 :space-evenly false 
+                (label :xalign 0 :yalign 0 :class "time-hour" :text "${formattime(EWW_TIME, "%I")}")
+                (label :xalign 0 :yalign 0 :class "time-min" :text "${formattime(EWW_TIME, "%M %p")}")
+            )
+            (box :orientation "v" :spacing 0 :space-evenly false :hexpand true :valign "center" 
+                (label :class "h1" :text "${formattime(EWW_TIME, "%A %B %d")}")
+                (label :class "i" :text "${splash}")
+            )
+        )
+        (search)
+        (weather)
+        (box :space-evenly false :spacing 20
+            (shortcuts)
+            (box :orientation "v" :hexpand true
+                (github)
+                (box
+                    (monitor :color "red" :var "${EWW_CPU.avg}" :max "100" :text "CPU" :suffix "%")
+                    (monitor :color "green" :var "${EWW_RAM.used_mem / 1000000000}" :max "${EWW_RAM.total_mem / 1000000000}" :text "RAM" :suffix "GB")
+                )
+            )
+        )
+        (power)
+    )
+)

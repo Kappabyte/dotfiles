@@ -2,6 +2,5 @@
     imports = [
         # Configuration Files
         ./config/hyprland.nix
-        ./config/eww.nix
     ];
 }

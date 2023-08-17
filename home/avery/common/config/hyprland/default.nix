@@ -100,6 +100,7 @@
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     exec-once=hyprpaper    
     exec-once=dunst
+    exec-once=/home/avery/.config/eww/launch.sh
 
     # Focus Workspace 1
     exec-once=hyprctl dispatch workspace 1

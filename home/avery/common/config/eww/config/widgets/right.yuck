@@ -1,0 +1,44 @@
+(defvar center_open false)
+
+(defpoll volume :interval "1s" :initial "0.5" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d' ' -f2-")
+(defpoll mic :interval "1s" :initial "0.5" "wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | cut -d' ' -f2-")
+
+(defwidget right [monitor]
+    (box :class "bkelement transparent" :space-evenly false
+        :halign "end"
+        :orientation "h"
+        (clock)
+        (seperator)
+        (eventbox :cursor "pointer"
+            (button :onclick "eww ${center_open ? "close" : "open"} controlcenter -c ${EWW_CONFIG_DIR} ${center_open ? "" : "--screen ${monitor}"} && eww update center_open=\"${!center_open}\" -c ${EWW_CONFIG_DIR}" 
+                (box :space-evenly false
+                    (battery)
+                    (volume)
+                )
+            )
+        )
+    )
+)
+
+(defwidget volume []
+    (box :spacing 0
+        (label :class "icon" :text "${volume <= 0 ? "󰝟 " : volume <= 0.33 ? "󰕿 " : volume <= 0.66 ? "󰖀 " : "󰕾 "}")
+        (label :text "${round(volume * 100, 0)}%")
+    )
+)
+
+(defwidget battery []
+    (box :spacing 0 :space-evenly false :spacing "${EWW_BATTERY != "" ? "10" : "0"}"
+        (label :text "${EWW_BATTERY.BAT1.capacity <= 0 ? " " : EWW_BATTERY.BAT1.capacity <= 0.2 ? " " : EWW_BATTERY.BAT1.capacity <= 0.4 ? " " : EWW_BATTERY.BAT1.capacity <= 0.6 ? " " : EWW_BATTERY.BAT1.capacity <= 0.8 ? "󰖀 " : " "}")
+        (label :text "${EWW_BATTERY != "" ? EWW_BATTERY.BAT1.capacity + "%" : ""}")
+        (box :width "${EWW_BATTERY != "" ? "10" : "0"}")
+    )
+)
+
+(defwidget clock []
+    (label :text "${formattime(EWW_TIME, "%I:%M %p")}")
+)
+
+(defwidget system []
+    "test"
+)

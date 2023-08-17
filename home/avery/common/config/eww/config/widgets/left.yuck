@@ -1,0 +1,48 @@
+(include "widgets/common.yuck")
+
+(defvar menu_open false)
+
+; Support for up to 16 monitors
+(deflisten poll_workspaces_0 "widgets/scripts/workspaces.sh 0")
+(deflisten poll_workspaces_1 "widgets/scripts/workspaces.sh 1")
+(deflisten poll_workspaces_2 "widgets/scripts/workspaces.sh 2")
+(deflisten poll_workspaces_3 "widgets/scripts/workspaces.sh 3")
+(deflisten poll_workspaces_4 "widgets/scripts/workspaces.sh 4")
+(deflisten poll_workspaces_5 "widgets/scripts/workspaces.sh 5")
+(deflisten poll_workspaces_6 "widgets/scripts/workspaces.sh 6")
+(deflisten poll_workspaces_7 "widgets/scripts/workspaces.sh 7")
+(deflisten poll_workspaces_8 "widgets/scripts/workspaces.sh 8")
+(deflisten poll_workspaces_9 "widgets/scripts/workspaces.sh 9")
+(deflisten poll_workspaces_10 "widgets/scripts/workspaces.sh 10")
+(deflisten poll_workspaces_11 "widgets/scripts/workspaces.sh 11")
+(deflisten poll_workspaces_12 "widgets/scripts/workspaces.sh 12")
+(deflisten poll_workspaces_13 "widgets/scripts/workspaces.sh 13")
+(deflisten poll_workspaces_14 "widgets/scripts/workspaces.sh 14")
+(deflisten poll_workspaces_15 "widgets/scripts/workspaces.sh 15")
+
+(defwidget workspaces [monitor]
+    (box
+        (literal :content "(literal :content poll_workspaces_${monitor})")
+    )
+)
+
+(defwidget menu_toggle [monitor]
+    (eventbox :cursor "pointer"
+        (button 
+            :class "menu" 
+            :onclick "eww ${menu_open ? "close" : "open"} home -c ${EWW_CONFIG_DIR} ${menu_open ? "" : "--screen ${monitor}"} && eww update menu_open=\"${!menu_open}\" -c ${EWW_CONFIG_DIR}" 
+            (image :path "assets/home.png" :image-height 20)
+        )
+    )
+)
+
+(defwidget left [monitor]
+    (box :class "bkelement transparent"
+        :halign "start"
+        :orientation "h"
+        :space-evenly false
+        (menu_toggle :monitor "${monitor}")
+        (seperator)
+        (workspaces :monitor "${monitor}")
+    )
+)

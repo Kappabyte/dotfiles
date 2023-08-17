@@ -1,0 +1,132 @@
+(defpoll status :interval "1s" "widgets/scripts/music_status.sh") 
+(defpoll albumart :interval "3s" "widgets/scripts/music_art.sh") 
+(defpoll album :interval "3s" "widgets/scripts/music_meta.sh album") 
+(defpoll artist :interval "3s" "widgets/scripts/music_meta.sh artist") 
+(defpoll title :interval "3s" "widgets/scripts/music_meta.sh title") 
+
+(defpoll hasbacklight :interval "30s" "echo $(bash -c \"brightnessctl\" 2> /dev/null) | grep backlight")
+(defpoll backlight :interval "1s" "echo \"$(brightnessctl -c backlight g)\"")
+(defpoll maxbacklight :interval "1s" "echo \"$(brightnessctl -c backlight m)\"")
+
+(defpoll volval :interval "1s" "wpctl") 
+(defpoll micval :interval "1s" "widgets/scripts/music_meta.sh title") 
+
+(defpoll interface :interval "5s" "echo \"$(route | grep '^default' | grep -o '[^ ]*$')\"")
+(defpoll isethernet :interval "5s" "echo \"$(widgets/scripts/network.sh isethernet)\"")
+(defpoll connection :interval "5s" "echo \"$(widgets/scripts/network.sh connection)\"")
+
+(defwidget music []
+    (overlay :class "menu-widget" :height 150
+        (box :class "albumart" :style "background-image: ${albumart == "good" ? "url(\"/tmp/art.jpg\")" : "none"};" :height 100)
+        (box :orientation "v" :space-evenly false :spacing 0 
+            (label :vexpand true :class "musictitle" :text "${title}" :limit-width 30)
+            (label :class "musicinfo" :text "${status == "" ? "No music playing" : artist == "" && album == "" ? "" : artist == "" ? album : album == "" ? artist : "${artist} • ${album}"}" :limit-width 100)
+            (box :vexpand true)
+            (box :vexpand true :class "musiccontrols"
+                (eventbox :cursor "pointer" :onclick "playerctl previous&" 
+                    (label :text "${status == "" ? "" : "󰒮"}")
+                )
+                (eventbox :cursor "pointer" :onclick "playerctl play-pause&"
+                    (label :text "${status == "" ? "" : status == "Playing" ? "󰏤" : "󰐊"}")
+                )
+                (eventbox :cursor "pointer" :onclick "playerctl next&"
+                    (label :text "${status == "" ? "" : "󰒭"}")
+                )
+            )
+        )
+    )
+)
+
+(defwidget volume_slider [color icon source wpsource]
+    (box :class "menu-widget pad"
+        (eventbox :cursor "ns-resize"
+            (overlay
+                (scale :class "vslider ${color}"
+                    :orientation "v" 
+                    :value "${source * 100}" 
+                    :max 101 
+                    :min 0
+                    :height 250 
+                    :flipped true
+                    :onchange "wpctl set-volume ${wpsource} $(awk 'BEGIN {print ({} / 100)}')"
+                )
+                (box :orientation "v" :space-evenly false
+                    (label :text "${icon}" :class "logo" :vexpand true )
+                    (label :text "${round(source * 100, 0)}%")
+                )
+            )
+        )
+    )
+)
+
+(defwidget brightness_slider [color icon source]
+    (box :class "menu-widget pad ${hasbacklight == "" ? "disabled" : ""}" :height 75
+        (eventbox :cursor "${hasbacklight == "" ? "" : "ew-resize"}"
+            (overlay
+                (scale :class "hslider ${hasbacklight == "" ? "" : color}"
+                    :orientation "h" 
+                    :value "${hasbacklight == "" ? 0 : source}" 
+                    :max 101 
+                    :min 0
+                    :onchange "brightnessctl s {}%"
+                )
+                (box :orientation "h" :space-evenly false
+                    (label :text "${icon}" :class "logo" :hexpand true )
+                    (label :text "${hasbacklight == "" ? "" : "${round(source, 0)}%"}")
+                )
+
+            )
+        )
+    )
+)
+
+(defwidget network [] 
+    (box :space-evenly false :width 100 :height 120 :spacing 20
+        (overlay :width 100 :height 100 :class "menu-widget"
+            (box :class "widget-backdrop ${interface == "" ? "red" : "green"}"
+                (label :class "logo" :text "${interface == "" ? "󰖪 " : "${isethernet != "" ? "󰈀 " :"󰖩 "}"}" :style "margin-left: 15px;")
+            )
+        )
+        (box :hexpand true :orientation "v"
+            (label :xalign 0 :class "gh-name" :text "${interface == "" ? "Offline" : connection}")
+            (label :xalign 0 :class "gh-item i" :text interface)
+            (box :orientation "h" :space-evenly false :spacing 30
+                (label :xalign 0 :class "gh-item" :text " ${interface == "" ? "0" : round(EWW_NET["${interface}"].NET_UP / 125000, 0)} mbps")
+                (label :xalign 0 :class "gh-item" :text " ${interface == "" ? "0" : round(EWW_NET["${interface}"].NET_DOWN / 125000, 0)} mbps")
+            )
+        )
+    )
+)
+
+(defwidget settingsbutton [color icon onclick]
+    (overlay :class "menu-widget"
+        (box :class "widget-backdrop ${color}")
+        (eventbox :cursor "pointer"
+            (button :class "logo" :onclick onclick icon)
+        )
+    )
+)
+
+(defwidget controlcenter []
+    (box :class "element transparent border" :orientation "v" :space-evenly false
+        (music)
+        (brightness_slider :color "gray" :icon "󰃞" :source "${hasbacklight == "" ? 0 : backlight / maxbacklight * 100}")
+        (box :orientation "h" :spacing 20 :space-evenly false
+            (volume_slider :color "blue" :icon "󰕾" :source "${volume}" :wpsource "@DEFAULT_AUDIO_SINK@")
+            (volume_slider :color "teal" :icon "󰍬" :source "${mic}" :wpsource "@DEFAULT_AUDIO_SOURCE@")
+            (box :hexpand true :spacing 0
+                (box :orientation "v" :spacing 0
+                    (box :orientation "h" :spacing 20
+                        (settingsbutton :color "dark" :icon "󰂯" :onclick "eww close controlcenter -c ${EWW_CONFIG_DIR} && eww update center_open=\"false\" -c ${EWW_CONFIG_DIR} && kitty bluetuith&")
+                        (settingsbutton :color "dark" :icon "󰖩" :onclick "eww close controlcenter -c ${EWW_CONFIG_DIR} && eww update center_open=\"false\" -c ${EWW_CONFIG_DIR} && kitty nmtui&")
+                    )
+                    (box :orientation "h" :spacing 20
+                        (settingsbutton :color "dark" :icon "󱡫" :onclick "eww close controlcenter -c ${EWW_CONFIG_DIR} && eww update center_open=\"false\" -c ${EWW_CONFIG_DIR} && pavucontrol&")
+                        (settingsbutton :color "dark" :icon "" :onclick "eww close controlcenter -c ${EWW_CONFIG_DIR} && eww update center_open=\"false\" -c ${EWW_CONFIG_DIR} && grim -g \"$(slurp)\" - | swappy -f -")
+                    )
+                )
+            )
+        )
+        (network)
+    )
+)

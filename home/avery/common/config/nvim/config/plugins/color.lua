@@ -1,5 +1,8 @@
 require('onedark').setup {
-    transparent = true
+    transparent = true,
+    lualine = {
+        transparent = true;
+    }
 }
 
 require('onedark').load()

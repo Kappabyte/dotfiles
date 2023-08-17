@@ -1,4 +1,7 @@
 { config, pkgs, ... }: {
+    imports = [
+        ../../nixos/overlays/swaylock-effects.nix
+    ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
     

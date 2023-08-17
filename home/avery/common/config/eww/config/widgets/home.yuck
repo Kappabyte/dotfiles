@@ -100,7 +100,7 @@
 (defwidget power []
     (box :class "power"
         (eventbox :cursor "pointer" (button :onclick "pkill tmux; hyprctl dispatch exit&" "󰍃 "))
-        (eventbox :cursor "pointer" (button :onclick "swaylock-fancy&" "󱅞 "))
+        (eventbox :cursor "pointer" (button :onclick "widgets/scripts/lock.sh&" "󱅞 "))
         (eventbox :cursor "pointer" (button :onclick "hyprctl reload&" "󰑓 "))
     )
 )

@@ -1,4 +1,5 @@
 { system-settings, ... }: {
+    xdg.configFile."hypr/lock.sh".source = ./lock.sh;
     xdg.configFile."hypr/hyprland.conf".text = ''
     
     ${system-settings}
@@ -115,8 +116,7 @@
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = $mainMod, return, exec, kitty
     bind = $mainMod, C, killactive, 
-    bind = $mainMod, M, exit, 
-    bind = $mainMod, E, exec, dolphin
+    bind = $mainMod, L, exec, /home/avery/.config/hypr/lock.sh
     bind = $mainMod, V, togglefloating, 
     bind = $mainMod, J, togglesplit, # dwindle
     bind = $mainMod, F, fullscreen,

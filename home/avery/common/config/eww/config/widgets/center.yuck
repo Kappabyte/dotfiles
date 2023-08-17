@@ -14,7 +14,7 @@
 (defwidget activeWindow []
     (box :hexpand true :space-evenly false
         (box :width 40)
-        (label :hexpand true :text poll_activeWindow)
+        (label :hexpand true :limit-width 50 :text poll_activeWindow)
         (box :width 40)
     )
 )

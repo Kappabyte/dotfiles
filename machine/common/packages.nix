@@ -9,6 +9,7 @@
     environment.systemPackages = with pkgs; [
         # Base apps
         firefox
+        chromium
         thunderbird
         cinnamon.nemo-with-extensions
         webcord-vencord
@@ -19,6 +20,7 @@
         amberol
         gthumb
         pavucontrol
+        openrgb
 
         # Development
         vscode
@@ -32,8 +34,12 @@
         git
         gh
 
-        # Office/School
+        # Productivity
         libreoffice-fresh       
+        pinta
+        tagger
+        gimp
+        inkscape
 
         # User Interface
         sddm-kcm
@@ -45,8 +51,20 @@
        
         # Settings
         bluetuith
-        
-        # Background services
+
+        # Utilities
+        xdg-ninja
+        swappy
+        slurp
+        grim
+        playerctl
+        (pkgs.callPackage ../../custom/packages/khinsider/default.nix {}) 
+        btop
+        libnotify
+        unzip
+        acpi
+
+        # Services
         xdg-user-dirs
         gnome.gnome-keyring
         grc
@@ -54,11 +72,6 @@
         libimobiledevice
         ifuse
         socat
-        playerctl
-        grim
-        slurp
-        swappy
-        (pkgs.callPackage ../../custom/packages/khinsider/default.nix {}) 
     ];
 
     # Force electron applications to use wayland

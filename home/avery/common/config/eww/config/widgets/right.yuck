@@ -10,7 +10,7 @@
         (clock)
         (seperator)
         (eventbox :cursor "pointer"
-            (button :onclick "eww ${center_open ? "close" : "open"} controlcenter -c ${EWW_CONFIG_DIR} ${center_open ? "" : "--screen ${monitor}"} && eww update center_open=\"${!center_open}\" -c ${EWW_CONFIG_DIR}" 
+            (button :onclick "eww ${center_open ? "close" : "open"} controlcenter -c ${EWW_CONFIG_DIR} ${center_open ? "" : "--screen ${monitor}"}; eww update center_open=\"${!center_open}\" -c ${EWW_CONFIG_DIR}" 
                 (box :space-evenly false
                     (battery)
                     (volume)

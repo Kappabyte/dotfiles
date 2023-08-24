@@ -30,7 +30,7 @@
     (eventbox :cursor "pointer"
         (button 
             :class "menu" 
-            :onclick "eww ${menu_open ? "close" : "open"} home -c ${EWW_CONFIG_DIR} ${menu_open ? "" : "--screen ${monitor}"} && eww update menu_open=\"${!menu_open}\" -c ${EWW_CONFIG_DIR}" 
+            :onclick "eww ${menu_open ? "close" : "open"} home -c ${EWW_CONFIG_DIR} ${menu_open ? "" : "--screen ${monitor}"}; eww update menu_open=\"${!menu_open}\" -c ${EWW_CONFIG_DIR}" 
             (image :path "assets/home.png" :image-height 20)
         )
     )

@@ -2,6 +2,7 @@
     imports = [
         # Configuration Files
         ./config/fish.nix
+        ./config/easyeffects.nix
         ./config/eww
         ./config/gtk.nix
         ./config/git.nix

@@ -41,12 +41,14 @@
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
         rounding = 5
-        blur = yes
-        blur_size = 5
-        blur_passes = 4
-        blur_xray = false
-        blur_ignore_opacity = false
-        blur_new_optimizations = on
+        blur {
+            enabled = true
+            size = 5
+            passes = 4
+            xray = false
+            ignore_opacity = false
+            new_optimizations = true
+        }
 
         drop_shadow = no
         shadow_range = 10

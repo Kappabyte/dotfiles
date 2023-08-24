@@ -11,7 +11,7 @@
         ../../nixos/packages/dbus.nix
         ../../nixos/packages/fish.nix
         ../../nixos/packages/hyprland.nix
-#        ../../nixos/packages/pipewire.nix
+        ../../nixos/packages/pipewire.nix
         ../../nixos/packages/sddm.nix
         ../../nixos/packages/xdg.nix
         ../../nixos/packages/xorg.nix

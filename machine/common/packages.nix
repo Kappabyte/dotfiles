@@ -36,6 +36,7 @@
 
         # Productivity
         libreoffice-fresh       
+        calibre
         pinta
         tagger
         gimp

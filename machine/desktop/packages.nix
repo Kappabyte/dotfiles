@@ -4,6 +4,7 @@
     environment.systemPackages = with pkgs; [
         steam
         cemu
+        yuzu
         gamescope
         steamtinkerlaunch
 

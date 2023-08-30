@@ -3,7 +3,7 @@
     # System packages common to all machines
     environment.systemPackages = with pkgs; [
         steam
-        lutris
+        cartridges
         cemu
         yuzu
         gamescope

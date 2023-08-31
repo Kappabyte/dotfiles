@@ -1,5 +1,6 @@
 { system-settings, ... }: {
     xdg.configFile."hypr/lock.sh".source = ./lock.sh;
+    xdg.configFile."hypr/rotate.sh".source = ./rotate.sh;
     xdg.configFile."hypr/hyprland.conf".text = ''
     
     ${system-settings}

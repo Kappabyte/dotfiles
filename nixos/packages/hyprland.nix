@@ -4,4 +4,6 @@
         enableNvidiaPatches = true;
         # xwayland.enable = false;
     };
+
+    hardware.sensor.iio.enable = true;
 }

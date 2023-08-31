@@ -5,8 +5,10 @@
         iptsd
         obsidian
 
+        (pkgs.callPackage ../../custom/packages/iio-hyprland/default.nix {}) 
+
         rnote
 
         brightnessctl
-        ];
+    ];
 }

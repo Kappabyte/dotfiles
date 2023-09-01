@@ -5,7 +5,7 @@
 last_monitors=$(hyprctl monitors | grep transform)
 
 update() {
-    if [[ $1 == "activelayout>>gpio-keys,English" ]]; then
+    if [[ $1 == "activelayout>>video-bus,English" ]]; then
         new_monitors=$(hyprctl monitors | grep transform)
         if [[ $new_monitors != $last_monitors ]]; then
             last_monitors=$new_monitors

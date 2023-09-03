@@ -63,6 +63,8 @@
         libnotify
         unzip
         acpi
+        yt-dlp
+        ffmpeg
 
         # Services
         xdg-user-dirs

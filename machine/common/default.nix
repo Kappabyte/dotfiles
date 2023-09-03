@@ -36,6 +36,7 @@
     # Enable nix flake support
     nix = {
         package = pkgs.nixFlakes;
+        nixPath = ["nixpkgs=${nixpkgs}"];
         extraOptions = "experimental-features = nix-command flakes";
     };
     boot.initrd.systemd.enable = true;

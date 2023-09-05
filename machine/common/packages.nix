@@ -79,6 +79,7 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     fonts.packages = with pkgs; [
+        helvetica-neue-lt-std
         noto-fonts
         noto-fonts-emoji
         font-awesome

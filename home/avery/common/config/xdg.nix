@@ -6,8 +6,8 @@
         download = "/home/avery/downloads";
         music = "/home/avery/music";
         pictures = "/home/avery/pictures";
-        videos = "/home/avery/vidoes";
-        desktop = /home/avery/.desktopdir;
+        videos = "/home/avery/videos";
+        desktop = "$HOME";
         publicShare = null;
         templates = null;
     };

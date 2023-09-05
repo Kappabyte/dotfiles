@@ -8,7 +8,7 @@
         (pkgs.callPackage ../../custom/packages/iio-hyprland/default.nix {}) 
 
         rnote
-        zoom
+        zoom-us
 
         brightnessctl
     ];

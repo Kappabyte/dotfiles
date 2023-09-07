@@ -6,6 +6,8 @@
         extraConfig = {
             diff.tool = "vimdiff";
             push.autoSetupRemote = "true";
+            init.defaultBranch = "main";
+            commit.gpgsign = "true";
         };
     };
 }

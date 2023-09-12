@@ -21,6 +21,10 @@ in {
                 script = "iptsd $(iptsd-find-hidraw)";
                 wantedBy = ["multi-user.target"];
             };
+            environment.etc."iptsd.conf" = ''
+            [Touch]
+            Disable = true
+            '';
         })
     ];
 }

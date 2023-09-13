@@ -65,6 +65,7 @@
         libnotify
         unzip
         acpi
+        evtest
 
         # Services
         xdg-user-dirs

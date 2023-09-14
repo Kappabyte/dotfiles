@@ -1,5 +1,6 @@
 { system-settings, ... }: {
     xdg.configFile."hypr/lock.sh".source = ./lock.sh;
+    xdg.configFile."hypr/rotate.sh".source = ./rotate.sh;
     xdg.configFile."hypr/hyprland.conf".text = ''
     
     ${system-settings}
@@ -101,6 +102,7 @@
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+    windowrulev2 = float,title:^(zoom)$
     exec-once=hyprpaper    
     exec-once=dunst
     exec-once=/home/avery/.config/eww/launch.sh

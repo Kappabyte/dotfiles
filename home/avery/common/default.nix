@@ -5,6 +5,7 @@
         ./config/easyeffects.nix
         ./config/eww
         ./config/gtk.nix
+        ./config/ssh.nix
         ./config/git.nix
         ./config/direnv.nix
         ./config/xdg.nix

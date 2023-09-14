@@ -36,6 +36,7 @@
 
         # Productivity
         libreoffice-fresh       
+        calibre
         pinta
         tagger
         gimp
@@ -65,6 +66,7 @@
         acpi
         yt-dlp
         ffmpeg
+        evtest
 
         # Services
         xdg-user-dirs
@@ -80,6 +82,7 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     fonts.packages = with pkgs; [
+        helvetica-neue-lt-std
         noto-fonts
         noto-fonts-emoji
         font-awesome

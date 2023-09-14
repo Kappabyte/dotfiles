@@ -8,6 +8,7 @@
 
         # Enable global packages
         ../../nixos/packages/adb.nix
+        ../../nixos/packages/gnupg.nix
         ../../nixos/packages/dbus.nix
         ../../nixos/packages/fish.nix
         ../../nixos/packages/hyprland.nix

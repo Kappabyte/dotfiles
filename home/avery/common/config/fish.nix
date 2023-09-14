@@ -5,6 +5,8 @@
             function fish_greeting
                 set result (onefetch &| grep "Error: Could not find any source code in this repository") &>/dev/null
 
+                command clear
+
                 if test -z "$result"; and test -e ".git/";
                     onefetch
                 else

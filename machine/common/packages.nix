@@ -35,6 +35,7 @@
         gh
 
         # Productivity
+        obsidian
         libreoffice-fresh       
         calibre
         pinta

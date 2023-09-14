@@ -3,7 +3,9 @@
         enable = true;
         interactiveShellInit = ''
             function fish_greeting
-                if test -e .git/
+                set result (onefetch &| grep "Error: Could not find any source code in this repository") &>/dev/null
+
+                if test -z "$result"; and test -e ".git/";
                     onefetch
                 else
                     neofetch
@@ -17,7 +19,7 @@
 
             fish_ssh_agent
             
-            if not set -q TMUX
+            if not test -z $(tty | grep pts); and not set -q TMUX;
                 exec tmux new -A -s avery
             end
         '';

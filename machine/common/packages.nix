@@ -17,6 +17,7 @@
         
         # Media
         vlc
+        zoom-us
         amberol
         gthumb
         pavucontrol

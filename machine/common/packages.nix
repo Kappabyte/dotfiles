@@ -17,6 +17,7 @@
         
         # Media
         vlc
+        obs-studio
         zoom-us
         amberol
         gthumb

@@ -37,6 +37,8 @@
         gh
 
         # Productivity
+        texstudio
+        texlive.combined.scheme-full
         obsidian
         libreoffice-fresh       
         calibre

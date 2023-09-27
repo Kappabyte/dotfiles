@@ -20,6 +20,7 @@
             nvim-lspconfig
             lsp-zero-nvim
             vim-be-good
+            nvim-jdtls
         ];
 
         extraLuaConfig = ''
@@ -32,10 +33,30 @@
         recursive = true;
     };
 
+    xdg.configFile."nvim/lua/avery/plugins/jdtls.lua".text = ''
+    local config = {
+        cmd = {
+            'jdt-language-server',
+            '-data', os.getenv("HOME") .. '/.cache/jdtls' .. os.getenv("PWD"),
+            '-configuration', '${pkgs.jdt-language-server}/share/config'
+        },
+        root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+        settings = {
+            java = {}
+        },
+        init_options = {
+            bundles = {}
+        },
+    }
+    
+    require('jdtls').start_or_attach(config)
+    '';
+
     home.packages = with pkgs; [
         ripgrep
         nodePackages.typescript-language-server
         rust-analyzer
         rnix-lsp
+        jdt-language-server
     ];
 }

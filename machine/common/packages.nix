@@ -24,6 +24,7 @@
 
         # Development
         vscode
+        jetbrains.idea-community
         cmake
         neofetch
         onefetch

@@ -1,9 +1,12 @@
 {config, pkgs, lib, ...}: {
     nixpkgs.overlays = [(final: prev: {
-        libsForQt5.kdeconnect-kde = prev.libsForQt5.kdeconnect-kde.overrideAttrs(oldAttrs: rec {
-            cmakeFlags = [
-                "-DBLUETOOTH_ENABLED:BOOL=ON"
-            ];
+        libsForQt5 = prev.libsForQt5.overrideScope(final: prev: {
+            kdeconnect-kde = prev.kdeconnect-kde.overrideAttrs(oldAttrs: rec {
+                buildInputs = (oldAttrs.buildInputs or []) ++ [ pkgs.libsForQt5.qtconnectivity ];
+                cmakeFlags = [
+                    "-DBLUETOOTH_ENABLED:BOOL=ON"
+                ];
+            });   
         });
     })];
 }

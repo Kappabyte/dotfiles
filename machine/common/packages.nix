@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
     imports = [
         ../../nixos/overlays/swaylock-effects.nix
+        ../../nixos/overlays/obsidian.nix
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;

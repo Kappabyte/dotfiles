@@ -1,5 +1,5 @@
 { lib, python3Packages, python310Packages, fetchFromGitHub}: 
-python3Packages.buildPythonApplication rec {
+python310Packages.buildPythonApplication rec {
     pname = "khinsider";
     version = "b1683fb";
     

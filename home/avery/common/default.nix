@@ -11,7 +11,7 @@
         ./config/direnv.nix
         ./config/xdg.nix
         ./config/kitty.nix
-        ./config/nvim
+        ./config/nvim.nix
         ./config/dunst.nix
         ./config/tmux.nix
         ./config/hyprpaper

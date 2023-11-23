@@ -18,6 +18,9 @@
             end
 
             alias clear "command clear && fish_greeting"
+            alias vim "nvim && clear"
+            alias vi "vim"
+            alias v "vim"
 
             fish_ssh_agent
             

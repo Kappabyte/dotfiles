@@ -16,16 +16,17 @@
             url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
         };
+        ags.url = "github:Aylur/ags";
   	};
 
-  	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, nixvim, ... }:
+  	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, nixvim, ags, ... }:
 	let
 		user = "avery";
 	in {
 		nixosConfigurations = (
 			import ./machine {
 				inherit (nixpkgs) lib;
-				inherit inputs nixpkgs user home-manager nixos-hardware nixvim;
+				inherit inputs nixpkgs user home-manager nixos-hardware nixvim ags;
 			}
 		);
 	};

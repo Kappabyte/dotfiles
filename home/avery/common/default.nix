@@ -4,6 +4,7 @@
         ./config/fish.nix
         ./config/easyeffects.nix
         ./config/eww
+        ./config/ags
         ./config/gtk.nix
         ./config/ssh.nix
         ./config/obs.nix

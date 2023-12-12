@@ -1,4 +1,4 @@
-{ lib, inputs, nixpkgs, user, home-manager, nixos-hardware, nixvim, ... }:
+{ lib, inputs, nixpkgs, user, home-manager, nixos-hardware, nixvim, ags, ... }:
 
 let
     system = "x86_64-linux";
@@ -24,7 +24,7 @@ in {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users = (import ../home/desktop.nix {
-                    inherit lib inputs pkgs user home-manager nixvim;
+                    inherit lib inputs pkgs user home-manager nixvim ags;
                 });
             }
         ];
@@ -45,7 +45,7 @@ in {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users = (import ../home/laptop.nix {
-                    inherit lib inputs pkgs user home-manager nixvim;
+                    inherit lib inputs pkgs user home-manager nixvim ags;
                 });
             }
         ];
@@ -64,7 +64,7 @@ in {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users = (import ../home/desktop.nix {
-                    inherit lib inputs pkgs user home-manager nixvim;
+                    inherit lib inputs pkgs user home-manager nixvim ags;
                 });
             }
         ];

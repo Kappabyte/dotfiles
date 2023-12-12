@@ -1,12 +1,12 @@
 { config, pkgs, ... }: {
     imports = [
-        ../../nixos/overlays/iptsd.nix
+        ../../overlays/iptsd.nix
     ];    
     # System packages common to all machines
     environment.systemPackages = with pkgs; [
         iptsd
 
-        (pkgs.callPackage ../../custom/packages/iio-hyprland/default.nix {}) 
+        (pkgs.callPackage ../../packages/iio-hyprland/default.nix {}) 
 
         rnote
 

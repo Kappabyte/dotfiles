@@ -1,21 +1,22 @@
 { config, pkgs, ... }: {
     imports = [
-        # Import custom services
-        ../../custom/services/mount.nix
+        ../common
 
-        ## Install system specific packages
+        # Import custom services
+        ../../services/mount.nix
+
+        ## Install system specific modules
         ./packages.nix
 
         ## Set up the hardware
         ./hardware/hardware-configuration.nix
         ./hardware/nvidia.nix
 
-        ## Enable system specific packages
-        ../../nixos/packages/steam.nix
-        ../../nixos/packages/systemd-boot.nix
+        ## Enable system specific modules
+        ../../modules/steam.nix
 
         ## Enable users
-        ../../nixos/users/avery.nix
+        ../../users/avery.nix
     ];
 
     ## Set the hostname

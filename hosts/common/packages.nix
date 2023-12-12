@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
     imports = [
-        ../../nixos/overlays/swaylock-effects.nix
-        ../../nixos/overlays/obsidian.nix
+        ../../overlays/swaylock-effects.nix
+        ../../overlays/obsidian.nix
     ];
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -66,7 +66,7 @@
         slurp
         grim
         playerctl
-        (pkgs.callPackage ../../custom/packages/khinsider/default.nix {}) 
+        (pkgs.callPackage ../../packages/khinsider/default.nix {}) 
         btop
         libnotify
         unzip

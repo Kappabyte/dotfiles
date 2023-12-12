@@ -18,7 +18,6 @@ in {
             };
         };
         modules = [
-            ./common
             ./desktop
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
@@ -39,7 +38,6 @@ in {
         };
         modules = [
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
-            ./common
             ./laptop
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;

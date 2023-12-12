@@ -3,26 +3,26 @@
         # Set up hardware
         ./hardware/network.nix
 
-        # Global packages
-        ./packages.nix
+        # Global modules
+        ./modules.nix
 
-	# Set up the hardware
-	./hardware/hardware-configuration.nix
+        # Set up the hardware
+        ./hardware/hardware-configuration.nix
 
-        # Enable global packages
-        ../../nixos/packages/dbus.nix
-        ../../nixos/packages/fish.nix
-        ../../nixos/packages/hyprland.nix
-        ../../nixos/packages/pipewire.nix
-        ../../nixos/packages/sddm.nix
-        ../../nixos/packages/xdg.nix
-        ../../nixos/packages/xorg.nix
-        ../../nixos/packages/plymouth.nix
-        ../../nixos/packages/ssh.nix
-        ../../nixos/packages/bluetooth.nix
+        # Enable global modules
+        ../../modules/dbus.nix
+        ../../modules/fish.nix
+        ../../modules/hyprland.nix
+        ../../modules/pipewire.nix
+        ../../modules/sddm.nix
+        ../../modules/xdg.nix
+        ../../modules/xorg.nix
+        ../../modules/plymouth.nix
+        ../../modules/ssh.nix
+        ../../modules/bluetooth.nix
 
-	# Add Users
-	../../nixos/users/avery.nix
+        # Add Users
+        ../../users/avery.nix
     ];
     networking.hostName = "avery-usb";
 

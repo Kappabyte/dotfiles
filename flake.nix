@@ -24,7 +24,7 @@
 		user = "avery";
 	in {
 		nixosConfigurations = (
-			import ./machine {
+			import ./hosts {
 				inherit (nixpkgs) lib;
 				inherit inputs nixpkgs user home-manager nixos-hardware nixvim ags;
 			}

@@ -1,19 +1,18 @@
 { config, pkgs, ... }: {
     imports = [
-        # Import custom services
-        ../../custom/services/iptsd.nix
+        ../common
 
-        ## Install system specific packages
+        # Import custom services
+        ../../services/iptsd.nix
+
+        ## Install system specific modules
         ./packages.nix
 
         ## Set up the hardware
         ./hardware/hardware-configuration.nix
 
-        ## Enable system specific packages
-        ../../nixos/packages/systemd-boot.nix
-
         ## Enable users
-        ../../nixos/users/avery.nix
+        ../../users/avery.nix
     ];
 
     services.xserver.libinput.touchpad.naturalScrolling = true;

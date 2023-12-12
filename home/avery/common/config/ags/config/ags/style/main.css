@@ -1,0 +1,81 @@
+@import url("colorscheme/onedark.css");
+
+
+.bar {
+    background: transparent;
+}
+
+.barsection {
+    background: @bg-color-transparent;
+    border-radius: 5px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    padding: 5px;
+}
+
+
+@keyframes flash {
+    0% {
+        color: @red;
+    }
+
+    49% {
+        color: @red;
+    }
+
+    50% {
+        color: unset;
+    }
+
+    99% {
+        color: unset;
+    }
+
+    100% {
+        color: @red;
+    }
+}
+
+.workspace.current {
+    color: @blue;
+}
+
+.workspace.urgent {
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.workspace:hover {
+    color: @blue;
+}
+
+.notification-icon {
+    font-size: 14px;
+}
+
+.notification-icon:hover {
+    color: @gray;
+}
+
+.notification {
+    background: @bg-color-transparent;
+}
+
+.notification.low {
+    border-left: 5px solid @blue;
+}
+
+.notification.normal {
+    border-left: 5px solid @green;
+}
+
+.notification.critical {
+    border-left: 5px solid @red;
+}

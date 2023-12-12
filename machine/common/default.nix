@@ -11,6 +11,7 @@
         ../../nixos/packages/gnupg.nix
         ../../nixos/packages/dbus.nix
         ../../nixos/packages/kdeconnect.nix
+        ../../nixos/packages/upower.nix
         ../../nixos/packages/fish.nix
         ../../nixos/packages/hyprland.nix
         ../../nixos/packages/pipewire.nix

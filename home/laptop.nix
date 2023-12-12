@@ -2,6 +2,7 @@
     avery = { 
         imports = [
             nixvim.homeManagerModules.nixvim
+            ags.homeManagerModules.default
             ./avery/common
             ./avery/laptop
         ];

@@ -1,15 +1,12 @@
-{config, pkgs, lib, ...}: let
-    inherit (pkgs) fetchurl;
-in {
+{config, pkgs, lib, ...}: {
+# In overlay
     nixpkgs.overlays = [(final: prev: {
-        obsidian = prev.obsidian.overrideAttrs(oldAttrs: rec {
-            version = "1.4.14";
-            filename = "obsidian-${version}.tar.gz";
-            src = fetchurl {
-                url = "https://github.com/obsidianmd/obsidian-releases/releases/download/v${version}/${filename}";
-                hash = "sha256-qFSQer37Nkh3A3oVAFP/0qXzPWJ7SqY2GYA6b1iaYmE=";
-            };
-        });
-
+        obsidian = prev.obsidian.override {electron = final.electron_24;};
     })];
+    # In config
+    nixpkgs.config = {
+      permittedInsecurePackages = [
+        "electron-24.8.6"
+      ];
+    };
 }

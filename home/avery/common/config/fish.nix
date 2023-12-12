@@ -2,6 +2,7 @@
    programs.fish = {
         enable = true;
         interactiveShellInit = ''
+            alias neofetch "fastfetch -s Title:Separator:OS:Host:Kernel:Uptime:Shell:Display:DE:WM:WMTheme:Theme:Icons:Terminal:CPU:GPU:Memory:Break:Colors --ds-force-drm"
             function fish_greeting
                 set result (onefetch &| grep "Error: Could not find any source code in this repository") &>/dev/null
 
@@ -18,9 +19,9 @@
             end
 
             alias clear "command clear && fish_greeting"
-            alias vim "nvim && clear"
-            alias vi "vim"
-            alias v "vim"
+            alias vim nvim
+            alias vi vim
+            alias v vim
 
             fish_ssh_agent
             

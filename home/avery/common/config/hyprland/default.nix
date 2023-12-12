@@ -103,6 +103,7 @@
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     windowrulev2 = float,title:^(zoom)$
+    windowrule = noanim,ulauncher
     exec-once=hyprpaper    
     exec-once=dunst
     exec-once=/home/avery/.config/eww/launch.sh
@@ -113,6 +114,8 @@
     # Set the cursor theme
     exec-once=hyprctl setcursor Catppuccin-Mocha-Light-Cursors 48
     
+    # Open ulauncher
+    exec-once=ulauncher --no-window-shadow --hide-window
 
     #See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
@@ -131,7 +134,7 @@
     bind = $mainMod, down, movefocus, d
 
     # Open Application Launcher
-    bind = $mainMod, P, exec, wofi --show drun
+    bind = $mainMod, P, exec, ulauncher-toggle
 
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, moveworkspacetomonitor, 1 current

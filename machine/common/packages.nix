@@ -29,7 +29,7 @@
         vscode
         jetbrains.idea-community
         cmake
-        neofetch
+        fastfetch
         onefetch
         neovim
         tmux
@@ -51,7 +51,7 @@
 
         # User Interface
         sddm-kcm
-        wofi
+        ulauncher
         hyprpaper
         swaylock-effects
         papirus-folders

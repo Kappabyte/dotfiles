@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
     programs.hyprland = {
         enable = true;
-        xwayland.enable = false;
+        xwayland.enable = true;
     };
 
     hardware.sensor.iio.enable = true;

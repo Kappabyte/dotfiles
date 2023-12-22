@@ -94,8 +94,8 @@
         sensitivity = -0.5
     }
 
-    layerrule = blur, gtk-layer-shell
-    layerrule = ignorezero, gtk-layer-shell
+    layerrule = blur, ^ags:.*$
+    layerrule = ignorezero, ^ags:.*$
 
     # Example windowrule v1
     # windowrule = float, ^(kitty)$

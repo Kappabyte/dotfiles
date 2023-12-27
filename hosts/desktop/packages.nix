@@ -8,6 +8,7 @@
         yuzu
         gamescope
         steamtinkerlaunch
+        (pkgs.callPackage ../../packages/totk-mod-manager/default.nix {})
 
         libsForQt5.kdenlive
         openshot-qt

@@ -68,7 +68,7 @@
         playerctl
         (pkgs.callPackage ../../packages/khinsider/default.nix {}) 
         btop
-        keypassxc
+        keepassxc
         libnotify
         unzip
         acpi

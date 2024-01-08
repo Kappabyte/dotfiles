@@ -8,7 +8,6 @@
 
         # Enable global modules
         ../../modules/adb.nix
-        ../../modules/kernel.nix
         ../../modules/systemd-boot.nix
         ../../modules/gnupg.nix
         ../../modules/dbus.nix

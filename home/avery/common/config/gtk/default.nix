@@ -3,8 +3,8 @@
         enable = true;
         gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
         theme = {
-            name = "One-Dark";
-            package = (pkgs.callPackage ../../../../packages/onedark-gtk/default.nix {}); 
+            name = "adw-gtk3-dark";
+            package = pkgs.adw-gtk3;
         };
         iconTheme = {
             name = "Papirus-Dark";
@@ -12,9 +12,8 @@
                 color = "cyan";
             };
         };
-        cursorTheme = {
-            name = "Catppuccin-Mocha-Light-Cursors";
-            size = 48;
-        };
     };
+
+    xdg.configFile."gtk-3.0/gtk.css".source = ./Adwaita-One-Dark/colors/gtk.css;
+    xdg.configFile."gtk-4.0/gtk.css".source = ./Adwaita-One-Dark/colors/gtk.css;
 }

@@ -5,7 +5,7 @@
         ./config/easyeffects.nix
         ./config/eww
         ./config/ags
-        ./config/gtk.nix
+        ./config/gtk
         ./config/ssh.nix
         ./config/obs.nix
         ./config/npm.nix

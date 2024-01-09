@@ -18,6 +18,7 @@
         shellInit = ''
         set -x DIRENV_LOG_FORMAT ""
         direnv hook fish | source
+        thefuck -a fuck | source
         '';
         plugins = [
             { name = "grc"; src = pkgs.fishPlugins.grc.src; }

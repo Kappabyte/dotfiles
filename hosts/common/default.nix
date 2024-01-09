@@ -42,6 +42,7 @@
     nix = {
         package = pkgs.nixFlakes;
         extraOptions = "experimental-features = nix-command flakes";
+        channel.enable = false;
     };
     boot.initrd.systemd.enable = true;
     boot.kernelParams = ["quiet"];

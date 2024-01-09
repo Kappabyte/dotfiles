@@ -25,6 +25,7 @@
         ../../modules/xpadneo.nix
         ../../modules/syncthing.nix
         ../../modules/usbmuxd.nix
+        ../../modules/thefuck.nix
     ];
         
 

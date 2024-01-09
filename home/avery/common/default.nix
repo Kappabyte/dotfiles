@@ -1,7 +1,7 @@
 { lib, inputs, pkgs, user, home-manager, ... }: {
     imports = [
         # Configuration Files
-        ./config/fish.nix
+        ./config/fish
         ./config/easyeffects.nix
         ./config/eww
         ./config/ags

@@ -1,15 +1,22 @@
 { config, lib, inputs, pkgs, user, home-manager, ... }: {
-    xdg.userDirs = {
+    xdg = {
         enable = true;
-        createDirectories = true;
-        documents = "/home/avery/documents";
-        download = "/home/avery/downloads";
-        music = "/home/avery/music";
-        pictures = "/home/avery/pictures";
-        videos = "/home/avery/videos";
-        desktop = "$HOME";
-        publicShare = null;
-        templates = null;
+        userDirs = {
+            enable = true;
+            createDirectories = true;
+            documents = "/home/avery/documents";
+            download = "/home/avery/downloads";
+            music = "/home/avery/music";
+            pictures = "/home/avery/pictures";
+            videos = "/home/avery/videos";
+            desktop = "$HOME";
+            publicShare = null;
+            templates = null;
+        };
+        dataHome = "${config.home.homeDirectory}/.local/share";
+        configHome = "${config.home.homeDirectory}/.config";
+        stateHome = "${config.home.homeDirectory}/.local/state";
+        cacheHome = "${config.home.homeDirectory}/.cache";
     };
 
     
@@ -21,28 +28,25 @@
     };
 
     home.sessionVariables = {
-        XDG_DATA_HOME = "$HOME/.local/share";
-        XDG_CONFIG_HOME = "$HOME/.config";
-        XDG_STATE_HOME = "$HOME/.local/state";
-        XDG_CACHE_HOME = "$HOME/.cache";
-
         # android-studio
-        ANDROID_HOME = "${config.home.sessionVariables.XDG_DATA_HOME}/android";
+        ANDROID_HOME = "${config.xdg.dataHome}/android";
         # bash
-        HISTFILE = "\"${config.home.sessionVariables.XDG_STATE_HOME}\"/bash/history";
+        HISTFILE = "\"${config.xdg.stateHome}\"/bash/history";
+        # npm
+        NPM_CONFIG_USERCONFIG = "\"${config.xdg.configHome}\"/npm/npmrc";
         # cargo
-        CARGO_HOME = "\"${config.home.sessionVariables.XDG_DATA_HOME}\"/cargo";
+        CARGO_HOME = "\"${config.xdg.dataHome}\"/cargo";
         # gnupg
-        GNUPGHOME = "\"${config.home.sessionVariables.XDG_DATA_HOME}\"/gnupg";
+        GNUPGHOME = "\"${config.xdg.dataHome}\"/gnupg";
         # gradle
-        GRADLE_USER_HOME = "\"${config.home.sessionVariables.XDG_DATA_HOME}\"/gradle";
+        GRADLE_USER_HOME = "\"${config.xdg.dataHome}\"/gradle";
         # gtk-2
-        GTK2_RC_FILES = lib.mkForce "\"${config.home.sessionVariables.XDG_CONFIG_HOME}\"/gtk-2.0/gtkrc";
+        GTK2_RC_FILES = lib.mkForce "\"${config.xdg.configHome}\"/gtk-2.0/gtkrc";
         # nodejs
-        NODE_REPL_HISTORY = "\"${config.home.sessionVariables.XDG_DATA_HOME}\"/node_repl_history";
+        NODE_REPL_HISTORY = "\"${config.xdg.dataHome}\"/node_repl_history";
         # openjdk
-        _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=\"${config.home.sessionVariables.XDG_CONFIG_HOME}\"/java";
+        _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=\"${config.xdg.configHome}\"/java";
         # rustup
-        RUSTUP_HOME = "\"${config.home.sessionVariables.XDG_DATA_HOME}\"/rustup";
+        RUSTUP_HOME = "\"${config.xdg.dataHome}\"/rustup";
     };
 }

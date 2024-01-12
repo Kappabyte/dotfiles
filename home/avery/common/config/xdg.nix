@@ -10,8 +10,8 @@
             pictures = "/home/avery/pictures";
             videos = "/home/avery/videos";
             desktop = "$HOME";
-            publicShare = null;
-            templates = null;
+            publicShare = "/home/avery/games";
+            templates = "/home/avery/code";
         };
         dataHome = "${config.home.homeDirectory}/.local/share";
         configHome = "${config.home.homeDirectory}/.config";

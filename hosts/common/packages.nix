@@ -28,6 +28,7 @@
         # Development
         vscode
         jetbrains.idea-community
+        logisim
         cmake
         fastfetch
         onefetch

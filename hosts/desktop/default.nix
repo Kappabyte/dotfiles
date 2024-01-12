@@ -14,6 +14,7 @@
 
         ## Enable system specific modules
         ../../modules/steam.nix
+        ../../modules/kernel.nix
 
         ## Enable users
         ../../users/avery.nix

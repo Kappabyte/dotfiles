@@ -101,12 +101,14 @@
     # windowrule = float, ^(kitty)$
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+    windowrulev2 = float,title:^Unlock Database - KeePassXC$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
     windowrulev2 = float,title:^(zoom)$
     windowrule = noanim,ulauncher
     exec-once=hyprpaper    
     exec-once=dunst
     exec-once=/home/avery/.config/eww/launch.sh
+    exec-once=keepassxc
 
     # Focus Workspace 1
     exec-once=hyprctl dispatch workspace 1

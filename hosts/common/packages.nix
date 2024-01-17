@@ -28,6 +28,7 @@
         # Development
         vscode
         jetbrains.idea-community
+        eclipses.eclipse-java
         logisim
         cmake
         fastfetch

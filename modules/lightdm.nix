@@ -2,5 +2,9 @@
     services.xserver.enable = true;
     hardware.opengl.enable = true;
 
-    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.displayManager.lightdm = {
+        greeters.slick.enable = true;
+        enable = true;
+    };
+
 }

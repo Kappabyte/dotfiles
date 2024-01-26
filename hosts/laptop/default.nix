@@ -24,9 +24,4 @@
     services.openssh.settings.PermitRootLogin = "yes";
     ## Set the hostname
     networking.hostName = "averys-laptop";
-
-    ## Disable the second monitor when logging in
-    services.xserver.displayManager.setupCommands = ''
-    ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --off
-    '';
 }

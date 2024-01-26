@@ -16,7 +16,7 @@
         ../../modules/fish.nix
         ../../modules/hyprland.nix
         ../../modules/pipewire.nix
-        ../../modules/sddm.nix
+        ../../modules/lightdm.nix
         ../../modules/xdg.nix
         ../../modules/xorg.nix
         ../../modules/plymouth.nix

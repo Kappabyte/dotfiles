@@ -16,7 +16,7 @@
         ../../modules/fish.nix
         ../../modules/hyprland.nix
         ../../modules/pipewire.nix
-        ../../modules/lightdm.nix
+        ../../modules/greetd
         ../../modules/xdg.nix
         ../../modules/xorg.nix
         ../../modules/plymouth.nix
@@ -45,7 +45,7 @@
         channel.enable = false;
     };
     boot.initrd.systemd.enable = true;
-    boot.kernelParams = ["quiet"];
+    boot.kernelParams = ["quiet" "splash"];
     # Set the state version
     system.stateVersion = "22.11";
 

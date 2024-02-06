@@ -123,7 +123,6 @@
                 enable = true;
                 kind = "floating";
             };
-            alpha.enable = true;
             noice = {
                 enable = true;
             };

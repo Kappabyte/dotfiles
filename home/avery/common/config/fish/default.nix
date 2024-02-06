@@ -11,6 +11,7 @@
             fish_ssh_agent
             
             if not test -z $(tty | grep pts); and not set -q TMUX;
+                set -x TMUX_SHLVL $SHLVL
                 exec tmux new -A -s avery
             end
         '';

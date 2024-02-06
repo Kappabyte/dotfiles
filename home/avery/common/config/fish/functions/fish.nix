@@ -79,7 +79,9 @@
                     set prompt_path "$relpath$sep$COLOR_Y$relfolder$COLOR_RESET"
                 end
 
-                if test $SHLVL -gt 2
+                if test -z $TMUX_SHLVL
+                    set nixShell ""
+                else if test $SHLVL -gt $TMUX_SHLVL
                     set nixShell "$(echo $EM_G)󱄅 $COLOR_RESET"
                 else
                     set nixShell ""

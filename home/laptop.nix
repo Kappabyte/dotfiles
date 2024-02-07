@@ -3,7 +3,7 @@
         imports = [
             nixvim.homeManagerModules.nixvim
             ags.homeManagerModules.default
-            ./avery/common
+            ./avery/base
             ./avery/laptop
         ];
     };

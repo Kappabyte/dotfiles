@@ -1,15 +1,7 @@
 { lib, ... }:
 
 with lib; let
-# Recursively constructs an attrset of a given folder, recursing on directories, value of attrs is the filetype
-getDir = dir: (builtins.readDir dir);
-
-# Collects all files of a directory as a list of strings of paths
-files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
-
-# Filters out directories that don't end with .nix or are this file, also makes the strings absolute
-validFiles = dir: map(file: dir + "/${file}")(filter(file: hasSuffix ".nix" file && file != "default.nix")(trace (files dir)(files dir)));
-
+configs = dir: map (n: "${dir}/${n}") (builtins.attrNames (builtins.readDir dir));
 in {
-  imports = validFiles ./config;
+  imports = (trace (configs ./config) (configs ./config));
 }

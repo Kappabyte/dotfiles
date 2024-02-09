@@ -1,8 +1,8 @@
-{ lib, inputs, pkgs, user, home-manager, nixvim, ags, ... }: {
+{ lib, pkgs, inputs, ... }: {
     avery = { 
         imports = [
-            nixvim.homeManagerModules.nixvim
-            ags.homeManagerModules.default
+            inputs.nixvim.homeManagerModules.nixvim
+            inputs.ags.homeManagerModules.default
             ./avery/base
             ./avery/desktop
         ];

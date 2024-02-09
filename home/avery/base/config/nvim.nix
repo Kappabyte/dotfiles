@@ -1,4 +1,4 @@
-{pkgs, nixvim, config, ...}: {
+{pkgs, config, ...}: {
 
     home.sessionVariables = {
         EDITOR = "nvim";

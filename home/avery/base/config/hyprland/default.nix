@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, inputs, ... }: {
     imports = [
         ./binds.nix
         ./decoration.nix
@@ -10,6 +10,10 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
+        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+        plugins = [
+            inputs.hycov.packages.${pkgs.system}.hycov
+        ];
         settings = {
             input = {
                 kb_layout = "us";
@@ -26,6 +30,18 @@
             };
             gestures = {
                 workspace_swipe = true;
+            };
+            plugin = {
+                hycov = {
+                    overview_gappo = 20; #gaps width from screen
+                    overview_gappi = 20; #gaps width from clients
+                    enable_hotarea = 0; # enable mouse cursor hotarea
+                    enable_alt_release_exit = 1;
+                    alt_toggle_auto_next = 1;
+                    auto_exit = 1;
+                    enable_gesture = 1;
+                    swipe_fingers = 3;
+                };
             };
         };
     };

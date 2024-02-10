@@ -10,8 +10,9 @@
                 vkd3d-proton
             ];
         })
-        cemu
+        #cemu
         steam
+        mangohud
         yuzu
         gamescope
         steamtinkerlaunch

@@ -31,18 +31,18 @@
             gestures = {
                 workspace_swipe = true;
             };
-            plugin = {
-                hycov = {
-                    overview_gappo = 20; #gaps width from screen
-                    overview_gappi = 20; #gaps width from clients
-                    enable_hotarea = 0; # enable mouse cursor hotarea
-                    enable_alt_release_exit = 1;
-                    alt_toggle_auto_next = 1;
-                    auto_exit = 1;
-                    enable_gesture = 1;
-                    swipe_fingers = 3;
-                };
-            };
         };
+        extraConfig = ''
+            plugin:hycov {
+                overview_gappo = 20
+                overview_gappi = 20
+                enable_hotarea = 0
+                enable_alt_release_exit = 1
+                alt_toggle_auto_next = 1
+                auto_exit = 1
+                enable_gesture = 1
+                swipe_fingers = 4
+            };
+        '';
     };
 }

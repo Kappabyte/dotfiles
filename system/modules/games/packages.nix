@@ -11,6 +11,7 @@
             ];
         })
         cemu
+        steam
         yuzu
         gamescope
         steamtinkerlaunch

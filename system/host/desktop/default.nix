@@ -8,7 +8,6 @@
     module.desktop.enable = true;
     module.development.enable = true;
     module.games.enable = true;
-    module.surface.enable = true;
     module.tools.enable = true;
 
     ## Set the hostname

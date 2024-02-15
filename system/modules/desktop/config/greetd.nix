@@ -1,0 +1,14 @@
+{ pkgs, lib, config }: let 
+    wallpaper = ./wallpaper.jpg;
+    sessions = (if config.module.desktop.enable == true then "${pkgs.hyprland}/share/wayland-sessions" else "");
+in {
+    services.greetd = {
+        enable = true;
+        settings = {
+            default_session = {
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --issue --time --remember --user-menu --sessions ${sessions}";
+                user = "greeter";
+            };
+        };
+    };
+}

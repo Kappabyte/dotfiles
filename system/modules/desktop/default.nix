@@ -2,7 +2,7 @@
 with lib; let
     getDir = dir: mapAttrs(file: type: if type == "directory" then getDir "${dir}/${file}" else type)(builtins.readDir dir);
     files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
-    genConfig = dir: recursiveMerge(map (file: import (dir + "/${file}") {pkgs = pkgs; lib = lib;}) (filter(file: hasSuffix ".nix" file && file != "default.nix")(files dir)));
+    genConfig = dir: recursiveMerge(map (file: import (dir + "/${file}") {pkgs = pkgs; lib = lib; config = config;}) (filter(file: hasSuffix ".nix" file && file != "default.nix")(files dir)));
     
     recursiveMerge = attrList:
     let f = attrPath:

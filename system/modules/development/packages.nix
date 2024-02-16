@@ -3,6 +3,7 @@
         godot_4
         blender
         krita
+        lmms
 
         vscode
         jetbrains.idea-community

@@ -1,5 +1,9 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
+        godot_4
+        blender
+        krita
+
         vscode
         jetbrains.idea-community
         eclipses.eclipse-java

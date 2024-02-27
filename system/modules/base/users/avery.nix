@@ -1,6 +1,6 @@
 { pkgs, lib}: {
     users.users.avery = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "adbusers" ];
+        extraGroups = [ "wheel" "networkmanager" "adbusers" "plugdev" "dialout" ];
     };
 }

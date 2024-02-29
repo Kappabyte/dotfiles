@@ -1,4 +1,4 @@
-{pkgs, lib}: {
+{pkgs, lib, config}: {
     nixpkgs.overlays = [(final: prev: {
         swaylock-effects = prev.swaylock-effects.overrideAttrs(oldAttrs: rec {
             src = prev.fetchFromGitHub {

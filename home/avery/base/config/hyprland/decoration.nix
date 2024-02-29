@@ -51,6 +51,7 @@
         windowrulev2 = [
             "float,title:^Unlock Database - KeePassXC$"
             "float,title:^(zoom)$"
+            "float,title:^(?!Steam$).*,class:steam"
         ];
         windowrule = [
             "noanim,ulauncher"

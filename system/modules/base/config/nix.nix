@@ -1,4 +1,4 @@
-{lib, pkgs}: {
+{lib, pkgs, config}: {
     nixpkgs.config.allowUnfree = true;
     nix.settings.trusted-users = [ "root" "avery" ];
     nix = {

@@ -1,3 +1,3 @@
-{pkgs, lib}: {
+{pkgs, lib, config}: {
     surface.ipts.enable = true;
 }

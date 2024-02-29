@@ -1,3 +1,3 @@
-{pkgs, lib}: {
+{pkgs, lib, config}: {
     programs.kdeconnect.enable = true;
 }

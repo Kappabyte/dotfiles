@@ -1,4 +1,4 @@
-{pkgs, lib}: {
+{pkgs, lib, config}: {
     services.issue = {
         enable = true;
         items = [

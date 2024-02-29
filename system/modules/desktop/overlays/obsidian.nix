@@ -1,4 +1,4 @@
-{pkgs, lib}: {
+{pkgs, lib, config}: {
 # In overlay
     nixpkgs.overlays = [(final: prev: {
         obsidian = prev.obsidian.override {electron = final.electron_24;};

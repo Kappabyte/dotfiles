@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=gamescope --steam -- steam -gamepadui -steamos3
+Name=Steam
+Type=Application
+Version=0.0.1

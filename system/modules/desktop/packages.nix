@@ -36,6 +36,7 @@
         grim
 
         gnome.gnome-keyring
+        xdg-utils
     ];
 
     fonts.packages = with pkgs; [

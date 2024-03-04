@@ -94,6 +94,7 @@
                         installCargo = true;
                     };
                     tsserver.enable = true;
+                    ccls.enable = true;
                 };
             };
             nvim-cmp = {

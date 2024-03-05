@@ -13,7 +13,7 @@
         #cemu
         steam
         mangohud
-        yuzu
+        ryujinx
         gamescope
         steamtinkerlaunch
         prismlauncher

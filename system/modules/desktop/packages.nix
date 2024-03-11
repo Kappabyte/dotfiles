@@ -12,7 +12,6 @@
         amberol
         gthumb
         pavucontrol
-        openrgb
         
         libreoffice-fresh       
         calibre

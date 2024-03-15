@@ -18,7 +18,6 @@
                 ",switch:off:Lid Switch,exec,${pkgs.brightnessctl}/bin/brightnessctl -r"
             ];
             bind = [
-                ",edge:u:d,hycov:toggleoverview"
             ];
             plugin = {
                 touch_gestures = {

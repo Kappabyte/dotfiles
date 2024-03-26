@@ -1,6 +1,6 @@
 {lib, pkgs, config}: {
     programs.gnupg.agent = {
         enable = true;
-        pinentryFlavor = "curses";
+        pinentryPackage = pkgs.pinentry-curses;
     };
 }

@@ -97,30 +97,15 @@
                     ccls.enable = true;
                 };
             };
-            nvim-cmp = {
+            cmp = {
                 enable = true;
-                sources = [
-                    { name = "nvim_lsp"; }
-                    { name = "path"; }
-                    { name = "buffer"; }
-                ];
-                mapping = {
-                    "<C-Space>" = "cmp.mapping.complete()";
-                    "<CR>" = "cmp.mapping.confirm({ select = true })";
-                    "<Tab>" = {
-                        action = ''
-                            function(fallback)
-                                if cmp.visible() then
-                                    cmp.select_next_item()
-                                else
-                                    fallback()
-                                end
-                            end
-                        '';
-                        modes = [
-                            "i"
-                            "s"
-                        ];
+                autoEnableSources = true;
+                settings = {
+                    mapping = {
+                        "<C-Space>" = "cmp.mapping.complete()";
+                        "<Tab>" = "cmp.mapping.confirm({ select = true })";
+                        "<C-q>" = "cmp.mapping(cmp.select_prev_item(), {'i', 's'})";
+                        "<C-e>" = "cmp.mapping(cmp.select_next_item(), {'i', 's'})";
                     };
                 };
             };

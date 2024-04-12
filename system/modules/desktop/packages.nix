@@ -36,6 +36,8 @@
 
         gnome.gnome-keyring
         xdg-utils
+
+        alsa-oss
     ];
 
     fonts.packages = with pkgs; [

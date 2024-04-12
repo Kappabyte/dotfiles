@@ -14,6 +14,7 @@
         steam
         mangohud
         ryujinx
+        (pkgs.callPackage ./packages/suyu {}) 
         gamescope
         steamtinkerlaunch
         prismlauncher

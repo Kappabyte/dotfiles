@@ -13,8 +13,7 @@
         #cemu
         steam
         mangohud
-        ryujinx
-        (pkgs.callPackage ./packages/suyu {}) 
+        (pkgs.callPackage ./packages/ryujinx {}) 
         gamescope
         steamtinkerlaunch
         prismlauncher

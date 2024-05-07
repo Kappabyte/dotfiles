@@ -22,7 +22,9 @@
 
         ulauncher
         hyprpaper
-        swaylock-effects
+
+        hyprlock
+        hypridle
 
         papirus-folders
         catppuccin-cursors.mochaLight

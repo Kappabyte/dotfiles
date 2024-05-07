@@ -5,7 +5,6 @@
         package = pkgs.nixFlakes;
         extraOptions = ''
         experimental-features = nix-command flakes
-        !include secret.conf
         '';
         channel.enable = false;
     };

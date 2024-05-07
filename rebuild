@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+faketty() {
+    script -qfc "$(printf "%q " "$@")" /dev/null
+}
+
 exit_script() {
     echo -e "\r     "
     echo -e "\r${Red}Failed to rebuild system!${Color_Off}"
@@ -86,7 +90,7 @@ echo
 echo -e "[2/2] ${Blue}rebuilding system...${Color_Off}"
 echo
 exec 5>&1
-if result=$(sudo nixos-rebuild switch --flake .#$(hostname) --option eval-cache false 2>&1 | tee /dev/fd/5); then
+if result=$(sudo faketty nixos-rebuild switch --flake .#$(hostname) --option eval-cache false 2>&1 | tee /dev/fd/5); then
     erase_lines $(echo "$result" | wc -l)
     #git push
     echo -e "${Green}System Rebuilt!${Color_Off}"

@@ -6,7 +6,6 @@
     ];
 
     xdg.configFile."hypr/lock.sh".source = ./lock.sh;
-    xdg.configFile."hypr/rotate.sh".source = ./rotate.sh;
 
     wayland.windowManager.hyprland = {
         enable = true;

@@ -5,11 +5,18 @@ OLD_LOCATION=$(pwd)
 
 cd $DOTFILES_LOCATION
 
+echo updating flake...
 nix flake update >/dev/null 2>&1 # Update the flake
-
-sudo nixos-rebuild switch --flake .#$(hostname) | grep -e "warning:" -e "error:" | grep -v "Git" #Rebuild the system
-git add .
-git commit -m "Update"
-git push
+echo
+echo rebuilding system...
+{ sudo nixos-rebuild switch --flake .#$(hostname) 2>&1; } | grep -e "warning:" -e "error:" | grep -v "Git" #Rebuild the system
+if [ $? -eq 0 ]; then
+    git add .
+    git commit -m "Update"
+    git push
+else
+    echo
+    echo Failed to rebuild system!
+fi
 
 cd OLD_LOCATION

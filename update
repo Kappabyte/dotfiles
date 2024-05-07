@@ -1,22 +1,35 @@
 #!/usr/bin/env bash
 
+# Reset
+Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+Black='\033[0;30m'        # Black
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Blue='\033[0;34m'         # Blue
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+White='\033[0;37m'        # White
+
 DOTFILES_LOCATION=~/code/projects/current/dotfiles
 OLD_LOCATION=$(pwd)
 
 cd $DOTFILES_LOCATION
 
-echo updating flake...
+echo -e "${Green}updating flake..."
 nix flake update >/dev/null 2>&1 # Update the flake
 echo
-echo rebuilding system...
-{ sudo nixos-rebuild switch --flake .#$(hostname) 2>&1; } | grep -e "warning:" -e "error:" | grep -v "Git" #Rebuild the system
-if [ $? -eq 0 ]; then
-    git add .
-    git commit -m "Update"
-    git push
+echo -e "${Green}rebuilding system..."
+if result=$(sudo nixos-rebuild switch --flake .#$(hostname) 2>&1); then
+    echo YAY
+    #git add .
+    #git commit -m "Update"
+    #git push
 else
     echo
-    echo Failed to rebuild system!
+    echo -e "${Red}Failed to rebuild system!"
 fi
 
-cd OLD_LOCATION
+cd $OLD_LOCATION

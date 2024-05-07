@@ -3,7 +3,10 @@
     nix.settings.trusted-users = [ "root" "avery" ];
     nix = {
         package = pkgs.nixFlakes;
-        extraOptions = "experimental-features = nix-command flakes";
+        extraOptions = ''
+        experimental-features = nix-command flakes
+        !include secret.conf
+        '';
         channel.enable = false;
     };
 

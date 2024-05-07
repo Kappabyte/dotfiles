@@ -10,8 +10,6 @@
     module.games.enable = true;
     module.tools.enable = true;
 
-    fake = true;
-
     ## Set the hostname
     networking.hostName = hostName;
 }

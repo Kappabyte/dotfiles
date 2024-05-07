@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+DOTFILES_LOCATION=~/code/projects/current/dotfiles
+OLD_LOCATION=$(pwd)
+
+cd $DOTFILES_LOCATION
+
+nix flake update >/dev/null 2>&1 # Update the flake
+
+sudo nixos-rebuild switch --flake .#$(hostname) | grep -e "warning:" -e "error:" | grep -v "Git" #Rebuild the system
+git add .
+git commit -m "Update"
+git push
+
+cd OLD_LOCATION

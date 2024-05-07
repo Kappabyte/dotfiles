@@ -1,6 +1,0 @@
-(defwidget seperator []
-    (box 
-        :class "seperator"
-        :width 22
-        )
-)

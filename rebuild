@@ -31,24 +31,17 @@ OLD_LOCATION=$(pwd)
 cd $DOTFILES_LOCATION
 
 echo
-echo -e "[1/2] ${Blue}updating flake...${Color_Off}"
-updated=$(nix flake update 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep "Updated input")
+echo -e "[1/2] ${Blue}editing system configuration...${Color_Off}"
 
-if [ -z "$updated" ]; then
-    echo
-    echo -e "${Green}Already up to date!"
-    exit
-fi
-
-echo
-echo -e "Updated Inputs:"
-echo -e "$updated" | while read line; do
-    echo -e "\t${Green}$(echo -e "$line" | sed -e "s/• Updated input '\(.*\)':/\1/g")${Color_Off}"
-done
-echo
+nvim . # Open the editor
 
 git add . 2>&1 >/dev/null
-git commit -m "Update" 2>&1 >/dev/null
+git status
+
+echo -n "Enter commit name: "
+read commit
+
+git commit -m "$commit" 2>&1 >/dev/null
 
 echo -e "[2/2] ${Blue}rebuilding system...${Color_Off}"
 echo

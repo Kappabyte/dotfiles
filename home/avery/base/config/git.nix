@@ -8,6 +8,9 @@
             push.autoSetupRemote = "true";
             init.defaultBranch = "main";
             commit.gpgsign = "true";
+            alias = {
+                authors = "!git --no-pager log | grep Author | cut -f 2- -d ' ' | awk '{ sub(\" [^ ]*$\", \"\"); print }' | sort | uniq -c";
+            };
         };
     };
 }

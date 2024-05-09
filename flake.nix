@@ -18,16 +18,11 @@
         };
         ags.url = "github:Aylur/ags";
 
-        hyprland.url = "github:hyprwm/Hyprland";
+        hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
         hycov={
             url = "github:DreamMaoMao/hycov";
             inputs.hyprland.follows = "hyprland";
-        };
-
-        hyprgrass = {
-            url = "github:horriblename/hyprgrass";
-            inputs.hyprland.follows = "hyprland"; # IMPORTANT
         };
   	};
 

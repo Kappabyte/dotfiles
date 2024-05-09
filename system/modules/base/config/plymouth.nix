@@ -1,3 +1,3 @@
-{lib, pkgs}: {
+{lib, pkgs, config}: {
     boot.plymouth.enable = true;
 }

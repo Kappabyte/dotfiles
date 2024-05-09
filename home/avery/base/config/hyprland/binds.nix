@@ -58,12 +58,6 @@ in{
 
         ",XF86MonBrightnessUp,exec,brightnessctl +5%"
         ",XF86MonBrightnessDown,exec,brightnessctl 5%-"
-
-        "bind = ALT,tab,hycov:toggleoverview"
-        "bind=ALT,left,hycov:movefocus,l"
-        "bind=ALT,right,hycov:movefocus,r"
-        "bind=ALT,up,hycov:movefocus,u"
-        "bind=ALT,down,hycov:movefocus,d"
     ];
 
     wayland.windowManager.hyprland.settings.bindm = [

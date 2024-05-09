@@ -5,6 +5,7 @@
         krita
         lmms
 
+        # Generic Programming
         vscode
         jetbrains.idea-community
         eclipses.eclipse-java
@@ -19,6 +20,9 @@
         git
         gh
 
+        mysql-workbench
+
+        # Notes and Math
         texstudio
         texlive.combined.scheme-full
         obsidian

@@ -12,7 +12,6 @@
         amberol
         gthumb
         pavucontrol
-        openrgb
         
         libreoffice-fresh       
         calibre
@@ -23,7 +22,9 @@
 
         ulauncher
         hyprpaper
-        swaylock-effects
+
+        hyprlock
+        hypridle
 
         papirus-folders
         catppuccin-cursors.mochaLight
@@ -37,6 +38,8 @@
 
         gnome.gnome-keyring
         xdg-utils
+
+        alsa-oss
     ];
 
     fonts.packages = with pkgs; [

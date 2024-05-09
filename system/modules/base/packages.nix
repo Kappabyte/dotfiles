@@ -2,5 +2,6 @@
     environment.systemPackages = with pkgs; [
         acpi
         xdg-user-dirs
+        distrobox
     ];
 }

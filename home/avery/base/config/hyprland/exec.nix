@@ -1,7 +1,7 @@
 { ... }: {
     wayland.windowManager.hyprland.settings.exec-once = [
         "hyprpaper"
-        "/home/avery/.config/eww/launch.sh"
+        "ags"
         "keepassxc"
         "ulauncher --no-window-shadow --hide-window"
 

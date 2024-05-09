@@ -1,6 +1,5 @@
 { ... }: {
     xdg.configFile."hypr/lock.sh".source = ./lock.sh;
-    xdg.configFile."hypr/rotate.sh".source = ./rotate.sh;
 
     wayland.windowManager.hyprland.settings = {
         general = {
@@ -51,6 +50,7 @@
         windowrulev2 = [
             "float,title:^Unlock Database - KeePassXC$"
             "float,title:^(zoom)$"
+            "float,title:^(?!Steam$).*,class:steam"
         ];
         windowrule = [
             "noanim,ulauncher"

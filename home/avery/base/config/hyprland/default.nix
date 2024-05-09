@@ -6,13 +6,11 @@
     ];
 
     xdg.configFile."hypr/lock.sh".source = ./lock.sh;
-    xdg.configFile."hypr/rotate.sh".source = ./rotate.sh;
 
     wayland.windowManager.hyprland = {
         enable = true;
         package = inputs.hyprland.packages.${pkgs.system}.hyprland;
         plugins = [
-            inputs.hycov.packages.${pkgs.system}.hycov
         ];
         settings = {
             input = {
@@ -32,17 +30,5 @@
                 workspace_swipe = true;
             };
         };
-        extraConfig = ''
-            plugin:hycov {
-                overview_gappo = 20
-                overview_gappi = 20
-                enable_hotarea = 0
-                enable_alt_release_exit = 1
-                alt_toggle_auto_next = 1
-                auto_exit = 1
-                enable_gesture = 1
-                swipe_fingers = 4
-            };
-        '';
     };
 }

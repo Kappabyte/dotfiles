@@ -1,3 +1,3 @@
-{lib, pkgs}: {
+{lib, pkgs, config}: {
     services.upower.enable = true;
 }

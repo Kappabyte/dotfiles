@@ -19,6 +19,8 @@
         godot_4
         blender
 
+        mysql-workbench
+
         # Notes and Math
         texstudio
         texlive.combined.scheme-full

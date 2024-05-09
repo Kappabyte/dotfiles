@@ -24,11 +24,6 @@
             url = "github:DreamMaoMao/hycov";
             inputs.hyprland.follows = "hyprland";
         };
-
-        hyprgrass = {
-            url = "github:horriblename/hyprgrass";
-            inputs.hyprland.follows = "hyprland"; # IMPORTANT
-        };
   	};
 
   	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, ... }:

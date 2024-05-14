@@ -29,6 +29,26 @@ in {
             }
         ];
     };
+    oldlaptop = lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+            inherit inputs user system;
+            hostName = "oldlaptop";
+        };
+        modules = [
+            ./oldlaptop
+            home-manager.nixosModules.home-manager {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users = (import ../../home/oldlaptop.nix {
+                    inherit lib inputs pkgs user home-manager;
+                });
+                home-manager.extraSpecialArgs = {
+                    inherit inputs;
+                };
+            }
+        ];
+    };
     laptop = lib.nixosSystem {
         inherit system;
         specialArgs = {

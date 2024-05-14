@@ -1,5 +1,10 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
+        godot_4
+        blender
+        krita
+        lmms
+
         # Generic Programming
         vscode
         jetbrains.idea-community
@@ -14,10 +19,6 @@
         wget
         git
         gh
-
-        # Game Development
-        godot_4
-        blender
 
         mysql-workbench
 

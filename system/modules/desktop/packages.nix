@@ -31,6 +31,7 @@
         adw-gtk3
 
         bluetuith
+        antimicrox
 
         swappy
         slurp
@@ -40,6 +41,7 @@
         xdg-utils
 
         alsa-oss
+        faudio
     ];
 
     fonts.packages = with pkgs; [

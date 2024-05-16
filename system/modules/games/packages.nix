@@ -17,5 +17,6 @@
         gamescope
         steamtinkerlaunch
         prismlauncher
+        pegasus-frontend
     ];
 }

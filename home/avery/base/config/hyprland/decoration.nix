@@ -51,6 +51,12 @@
             "float,title:^Unlock Database - KeePassXC$"
             "float,title:^(zoom)$"
             "float,title:^(?!Steam$).*,class:steam"
+            "fullscreen,class:gamescope"
+            "workspace name:steam,class:gamescope"
+            "monitor DP-2,class:gamescope"
+            "fullscreen,initialTitle:Steam Big Picture Mode"
+            "workspace name:steam,initialTitle:Steam Big Picture Mode"
+            "monitor DP-2,initialTitle:Steam Big Picture Mode"
         ];
         windowrule = [
             "noanim,ulauncher"

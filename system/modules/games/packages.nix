@@ -13,6 +13,7 @@
         #cemu
         steam
         mangohud
+        (callPackage ./packages/yuzu {}) 
         (callPackage ./packages/ryujinx {}) 
         gamescope
         steamtinkerlaunch

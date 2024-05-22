@@ -1,4 +1,7 @@
-{pkgs, muse-sounds-manager, ...}: {
+{pkgs, inputs, ...}: 
+let 
+    muse-sounds-manager = inputs.muse-sounds-manager; 
+in {
     environment.systemPackages = with pkgs; [
         firefox
         thunderbird

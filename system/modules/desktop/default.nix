@@ -1,4 +1,4 @@
-{lib, pkgs, config, enabled, ...}: 
+{lib, pkgs, config, enabled, inputs, ...}: 
 with lib; let
     getDir = dir: mapAttrs(file: type: if type == "directory" then getDir "${dir}/${file}" else type)(builtins.readDir dir);
     files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
@@ -23,6 +23,6 @@ in{
                 (if (builtins.pathExists ./config) then (genConfig ./config) else {})
                 (if (builtins.pathExists ./users) then (genConfig ./users) else {})
                 (if (builtins.pathExists ./overlays) then (genConfig ./overlays) else {})
-                (if (builtins.pathExists ./packages.nix) then (import ./packages.nix {pkgs = pkgs; lib = lib;}) else {})
+                (if (builtins.pathExists ./packages.nix) then (import ./packages.nix {pkgs = pkgs; lib = lib; inputs = inputs;}) else {})
                 ]));
 }

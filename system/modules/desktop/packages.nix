@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, muse-sounds-manager, ...}: {
     environment.systemPackages = with pkgs; [
         firefox
         thunderbird
@@ -39,6 +39,8 @@
 
         gnome.gnome-keyring
         xdg-utils
+        musescore
+        muse-sounds-manager.packages.x86_64-linux.muse-sounds-manager
 
         alsa-oss
         faudio

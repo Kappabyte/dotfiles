@@ -5,7 +5,7 @@
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
 		home-manager = {
-			url = github:nix-community/home-manager;
+			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -24,16 +24,19 @@
             url = "github:DreamMaoMao/hycov";
             inputs.hyprland.follows = "hyprland";
         };
+        muse-sounds-manager = {
+            url = "github:thilobillerbeck/muse-sounds-manager-nix";
+        };
   	};
 
-  	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, ... }:
+  	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, ... }:
 	let
 		user = "avery";
 	in {
 		nixosConfigurations = (
 			import ./system/host {
 				inherit (nixpkgs) lib;
-				inherit inputs nixpkgs user home-manager nixos-hardware;
+				inherit inputs nixpkgs user home-manager nixos-hardware muse-sounds-manager;
 			}
 		);
 	};

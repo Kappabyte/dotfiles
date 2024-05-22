@@ -14,7 +14,6 @@
         steam
         mangohud
         (callPackage ./packages/ryujinx {}) 
-        (callPackage ./packages/opengamepadui {}) 
         gamescope
         steamtinkerlaunch
         prismlauncher

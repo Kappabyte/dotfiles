@@ -7,7 +7,7 @@ in {
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --issue --time --remember --user-menu --sessions ${sessions}";
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --issue --time --remember --remember-session --user-menu --sessions ${sessions}";
                 user = "greeter";
             };
         };

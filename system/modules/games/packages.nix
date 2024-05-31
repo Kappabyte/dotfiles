@@ -17,7 +17,10 @@
         (callPackage ./packages/ryujinx {}) 
         gamescope
         steamtinkerlaunch
-        (prismlauncher.override {additionalLibs = [ xorg.libXtst ]; })
+        (prismlauncher.override {additionalLibs = [ 
+            xorg.libXtst 
+            xorg.libXi
+        ]; })
         pegasus-frontend
     ];
 }

@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
+
+# Resee
+Color_Off='\033[0m'       # Text Reset
+
+# Regular Colors
+Black='\033[0;30m'        # Black
+Red='\033[0;31m'          # Red
+Green='\033[0;32m'        # Green
+Yellow='\033[0;33m'       # Yellow
+Blue='\033[0;34m'         # Blue
+Purple='\033[0;35m'       # Purple
+Cyan='\033[0;36m'         # Cyan
+White='\033[0;37m'        # White
+
 faketty() {
     script -qfc "$(printf "%q " "$@")" /dev/null
 }
@@ -9,6 +23,16 @@ exit_script() {
     echo
     echo -e "Errors:"
     echo -e "\t${Red}Terminated by user."
+    trap - SIGINT SIGTERM # clear the trap
+    exit
+}
+
+invalid_arguments() {
+    echo -e "\r     "
+    echo -e "\r${Red}Failed to update flake!"
+    echo
+    echo -e "Errors:"
+    echo -e "\t${Red}Invalid arguments. Use either 'switch' or 'boot' as the first argument"
     trap - SIGINT SIGTERM # clear the trap
     exit
 }
@@ -52,20 +76,11 @@ erase_lines(){
         fi
 }
 
+if [[ "$1" != "switch" ]] && [[ "$1" != "boot" ]]; then
+    invalid_arguments
+fi
+
 trap exit_script SIGINT SIGTERM
-
-# Reset
-Color_Off='\033[0m'       # Text Reset
-
-# Regular Colors
-Black='\033[0;30m'        # Black
-Red='\033[0;31m'          # Red
-Green='\033[0;32m'        # Green
-Yellow='\033[0;33m'       # Yellow
-Blue='\033[0;34m'         # Blue
-Purple='\033[0;35m'       # Purple
-Cyan='\033[0;36m'         # Cyan
-White='\033[0;37m'        # White
 
 DOTFILES_LOCATION=~/code/projects/current/dotfiles
 OLD_LOCATION=$(pwd)
@@ -79,14 +94,13 @@ updated=$(nix flake update 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep "Updated inpu
 if [ -z "$updated" ]; then
     echo
     echo -e "${Green}Already up to date!"
-    exit
+else
+    echo
+    echo -e "Updated Inputs:"
+    echo -e "$updated" | while read line; do
+        echo -e "\t${Green}$(echo -e "$line" | sed -e "s/• Updated input '\(.*\)':/\1/g")${Color_Off}"
+    done
 fi
-
-echo
-echo -e "Updated Inputs:"
-echo -e "$updated" | while read line; do
-    echo -e "\t${Green}$(echo -e "$line" | sed -e "s/• Updated input '\(.*\)':/\1/g")${Color_Off}"
-done
 echo
 
 git add . 2>&1 >/dev/null

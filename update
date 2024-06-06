@@ -101,7 +101,7 @@ else
         echo -e "\t${Green}$(echo -e "$line" | sed -e "s/• Updated input '\(.*\)':/\1/g")${Color_Off}"
     done
 fi
-echo "${Color_Off}"
+echo -e "${Color_Off}"
 
 git add . 2>&1 >/dev/null
 git commit -m "Update" 2>&1 >/dev/null

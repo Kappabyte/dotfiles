@@ -101,7 +101,7 @@ else
         echo -e "\t${Green}$(echo -e "$line" | sed -e "s/• Updated input '\(.*\)':/\1/g")${Color_Off}"
     done
 fi
-echo
+echo "${Color_Off}"
 
 git add . 2>&1 >/dev/null
 git commit -m "Update" 2>&1 >/dev/null
@@ -110,7 +110,7 @@ echo
 echo -e "[2/2] ${Blue}rebuilding system...${Color_Off}"
 echo
 exec 5>&1
-if result=$(faketty sudo nixos-rebuild switch --flake .#$(hostname) --option eval-cache false 2>&1 | tee /dev/fd/5); then
+if result=$(faketty sudo nixos-rebuild $1 --flake .#$(hostname) --option eval-cache false 2>&1 | tee /dev/fd/5); then
     erase_lines $(echo "$result" | wc -l)
     #git push
     echo -e "${Green}System Rebuilt!${Color_Off}"

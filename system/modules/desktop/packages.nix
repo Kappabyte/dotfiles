@@ -24,10 +24,11 @@ in {
         inkscape
 
         ulauncher
-        hyprpaper
 
+        hyprpaper
         hyprlock
         hypridle
+        hyprpicker
 
         papirus-folders
         catppuccin-cursors.mochaLight
@@ -47,7 +48,7 @@ in {
 
         alsa-oss
         faudio
-        zenity
+        gnome.zenity
     ];
 
     fonts.packages = with pkgs; [

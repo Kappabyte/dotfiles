@@ -47,6 +47,7 @@ in {
 
         alsa-oss
         faudio
+        zenity
     ];
 
     fonts.packages = with pkgs; [

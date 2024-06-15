@@ -23,9 +23,6 @@
                     scroll_factor = 0.3;
                 };
             };
-            master = {
-                new_is_master = true;
-            };
             gestures = {
                 workspace_swipe = true;
             };

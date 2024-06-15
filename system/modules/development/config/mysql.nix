@@ -1,4 +1,4 @@
-{pkgs, lib, config}: {
+{pkgs, ...}: {
     services.mysql = {
         enable = true;
         package = pkgs.mysql;

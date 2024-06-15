@@ -86,6 +86,7 @@
                     html.enable = true;
                     jsonls.enable = true;
                     nixd.enable = true;
+                    bashls.enable = false;
                     cssls.enable = true;
                     rust-analyzer = {
                         enable = true;

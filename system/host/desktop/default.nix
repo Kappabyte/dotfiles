@@ -1,4 +1,4 @@
-{ config, pkgs, lib, hostName, ... }: {
+{ config, pkgs, lib, hostName, inputs, ... }: {
     imports = [
         ../../modules
     ] ++ lib.optional (builtins.pathExists ./packages.nix) ./packages.nix

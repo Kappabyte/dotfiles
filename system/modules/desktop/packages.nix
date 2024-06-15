@@ -38,8 +38,8 @@ in {
         antimicrox
 
         protonvpn-gui
-        protonmail-desktop
-        #proton-pass
+        protonmail-bridge
+        proton-pass
 
         swappy
         slurp

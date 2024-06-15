@@ -1,5 +1,6 @@
-{ lib, python3Packages, python310Packages, fetchFromGitHub}: 
-python310Packages.buildPythonApplication rec {
+{ python311Packages, fetchFromGitHub}: let 
+    python = python311Packages;
+in python.buildPythonApplication rec {
     pname = "khinsider";
     version = "b1683fb";
     
@@ -10,9 +11,9 @@ python310Packages.buildPythonApplication rec {
         sha256 = "sha256-sSxLicoqS41Ofw5M0K3ERbYZAYe4lgQPKpzWdHNl0vA=";
     };
 
-    propagatedBuildInputs = [
-        python310Packages.requests
-        python310Packages.beautifulsoup4
+    propagatedBuildInputs = with python; [
+        requests
+        beautifulsoup4
     ];
 
     format = "other";

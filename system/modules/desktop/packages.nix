@@ -37,10 +37,6 @@ in {
         bluetuith
         antimicrox
 
-        protonvpn-gui
-        protonmail-bridge
-        proton-pass
-
         swappy
         slurp
         grim

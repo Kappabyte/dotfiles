@@ -39,7 +39,7 @@ in {
 
         protonvpn-gui
         protonmail-desktop
-        proton-pass
+        #proton-pass
 
         swappy
         slurp

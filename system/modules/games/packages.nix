@@ -10,12 +10,10 @@
                 vkd3d-proton
             ];
         })
-        #cemu
-        steam
+        cemu
         mangohud
         (callPackage ./packages/yuzu {}) 
         (callPackage ./packages/ryujinx {}) 
-        gamescope
         steamtinkerlaunch
         (prismlauncher.override {additionalLibs = [ 
             xorg.libXtst 

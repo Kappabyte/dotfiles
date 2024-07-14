@@ -9,7 +9,8 @@ in {
         webcord-vencord
         kitty
         
-        vlc
+        mpv
+        quodlibet-full
         obs-studio
         zoom-us
         amberol

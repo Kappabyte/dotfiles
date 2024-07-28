@@ -1,0 +1,35 @@
+name: Release to AUR
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:    
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Install cargo-aur
+        run: cargo install cargo-aur
+    
+      - name: Create PKGBUILD
+        run: cargo aur
+
+      - name: Upload assets
+        run: gh release upload ${{ github.event.release.tag_name }} ./target/cargo-aur/*.tar.gz
+
+      - name: Publish AUR package
+        uses: KSXGitHub/github-actions-deploy-aur@v2.7.0
+        with:
+          pkgname: matugen-bin
+          pkgbuild: ./target/cargo-aur/PKGBUILD
+          commit_username: ${{ secrets.AUR_USERNAME }}
+          commit_email: ${{ secrets.AUR_EMAIL }}
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: 'chore(aur): update package'
+          ssh_keyscan_types: rsa,dsa,ecdsa,ed25519

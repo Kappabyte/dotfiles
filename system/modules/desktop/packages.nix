@@ -2,7 +2,7 @@
 let 
     muse-sounds-manager = inputs.muse-sounds-manager; 
 in {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = (with pkgs; [
         firefox
         thunderbird
         cinnamon.nemo-with-extensions
@@ -10,7 +10,9 @@ in {
         kitty
         
         mpv
-        quodlibet-full
+        (quodlibet-full.override {
+            python3 = python311;
+        })
         obs-studio
         zoom-us
         amberol
@@ -45,11 +47,12 @@ in {
         gnome.gnome-keyring
         xdg-utils
         musescore
-        muse-sounds-manager.packages.x86_64-linux.muse-sounds-manager
 
         alsa-oss
         faudio
         gnome.zenity
+    ]) ++ [
+        muse-sounds-manager.packages.x86_64-linux.muse-sounds-manager
     ];
 
     fonts.packages = with pkgs; [

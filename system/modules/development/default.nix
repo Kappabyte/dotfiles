@@ -1,28 +1,26 @@
 {lib, pkgs, config, enabled, inputs, ...}: 
-with lib; let
-    getDir = dir: mapAttrs(file: type: if type == "directory" then getDir "${dir}/${file}" else type)(builtins.readDir dir);
-    files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
-    genConfig = dir: recursiveMerge(map (file: import (dir + "/${file}") {pkgs = pkgs; lib = lib; config = config; inputs = inputs;}) (filter(file: hasSuffix ".nix" file && file != "default.nix")(files dir)));
+let
+    getDir = dir: lib.mapAttrs(file: type: if type == "directory" then getDir "${dir}/${file}" else type)(builtins.readDir dir);
+    files = dir: lib.collect lib.isString (lib.mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (getDir dir));
+    genConfig = dir: recursiveMerge(map (file: import (dir + "/${file}") {pkgs = pkgs; lib = lib; config = config; inputs = inputs;}) (lib.filter(file: lib.hasSuffix ".nix" file && file != "default.nix")(files dir)));
     
-    recursiveMerge = attrList:
-    let f = attrPath:
-    zipAttrsWith (n: values:
-            if tail values == []
-            then head values
-            else if all isList values
-            then unique (concatLists values)
-            else if all isAttrs values
+    recursiveMerge = attrList: let f = attrPath: lib.zipAttrsWith (n: values:
+        if lib.tail values == []
+            then lib.head values
+        else if lib.all lib.isList values
+            then lib.unique (lib.concatLists values)
+        else if lib.all lib.isAttrs values
             then f (attrPath ++ [n]) values
-            else last values
-            );
+        else lib.last values
+    );
     in f [] attrList;
-in{
+in {
     imports = lib.optional (builtins.pathExists ./services) ./services;
 
     config = (lib.mkIf enabled (recursiveMerge [
-                (if (builtins.pathExists ./config) then (genConfig ./config) else {})
-                (if (builtins.pathExists ./users) then (genConfig ./users) else {})
-                (if (builtins.pathExists ./overlays) then (genConfig ./overlays) else {})
-                (if (builtins.pathExists ./packages.nix) then (import ./packages.nix {pkgs = pkgs; lib = lib;}) else {})
-                ]));
+        (if (builtins.pathExists ./config) then (genConfig ./config) else {})
+        (if (builtins.pathExists ./users) then (genConfig ./users) else {})
+        (if (builtins.pathExists ./overlays) then (genConfig ./overlays) else {})
+        (if (builtins.pathExists ./packages.nix) then (import ./packages.nix {pkgs = pkgs; lib = lib; inputs = inputs;}) else {})
+    ]));
 }

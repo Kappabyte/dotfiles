@@ -1,6 +1,6 @@
-{pkgs, lib}: {
+{pkgs, ...}: {
     environment.systemPackages = with pkgs; [
-        (pkgs.callPackage ./packages/iio-hyprland {}) 
+        (callPackage ./packages/iio-hyprland {}) 
         maliit-keyboard
     ];
 }

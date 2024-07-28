@@ -1,7 +1,7 @@
 { pkgs, ... }: {
     home.pointerCursor = {
         gtk.enable = true;
-        package = pkgs.gnome.adwaita-icon-theme;
+        package = pkgs.adwaita-icon-theme;
         name = "Adwaita";
         size = 16;
     };

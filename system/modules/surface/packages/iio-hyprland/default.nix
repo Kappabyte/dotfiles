@@ -7,7 +7,7 @@
   cmake,
   pkg-config,
   dbus
-}: stdenv.mkDerivation rec {
+}: stdenv.mkDerivation {
     pname = "iio-hyprland";
     version = "626dc91";
     

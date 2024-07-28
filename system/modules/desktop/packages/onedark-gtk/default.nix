@@ -1,10 +1,4 @@
-{ stdenv
-, lib
-, fetchFromGitLab
-, gnome-themes-extra
-, gtk-engine-murrine
-, gtk_engines
-}: stdenv.mkDerivation rec {
+{stdenv, fetchFromGitLab}: stdenv.mkDerivation {
     pname = "adwaita-one-dark";
     version = "v0.44.1";
     
@@ -22,7 +16,7 @@
         cp -r $src/One-Dark $out/share/themes/
     '';
 
-    meta = with lib; {
+    meta = {
         description = "One Dark Theme for GTK";
         homepage = "https://gitlab.com/roidm/one-dark";
     };

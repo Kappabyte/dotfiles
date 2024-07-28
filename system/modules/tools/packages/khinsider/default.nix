@@ -1,6 +1,6 @@
-{ python311Packages, fetchFromGitHub}: let 
+{python311Packages, fetchFromGitHub}: let 
     python = python311Packages;
-in python.buildPythonApplication rec {
+in python.buildPythonApplication {
     pname = "khinsider";
     version = "b1683fb";
     

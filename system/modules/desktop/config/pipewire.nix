@@ -1,4 +1,4 @@
-{pkgs, lib, config}: {
+{...}: {
     services.pipewire = {
         enable = true;
         alsa.enable = true;

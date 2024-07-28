@@ -5,7 +5,7 @@ in {
     environment.systemPackages = (with pkgs; [
         firefox
         thunderbird
-        cinnamon.nemo-with-extensions
+        nemo-with-extensions
         webcord-vencord
         kitty
         
@@ -44,13 +44,13 @@ in {
         slurp
         grim
 
-        gnome.gnome-keyring
+        gnome-keyring
         xdg-utils
         musescore
 
         alsa-oss
         faudio
-        gnome.zenity
+        zenity
     ]) ++ [
         muse-sounds-manager.packages.x86_64-linux.muse-sounds-manager
     ];

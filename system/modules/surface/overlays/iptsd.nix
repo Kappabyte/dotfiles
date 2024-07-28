@@ -1,4 +1,4 @@
-{pkgs, lib, config}: {
+{...}: {
     nixpkgs.overlays = [(final: prev: {
         iptsd = prev.iptsd.overrideAttrs(oldAttrs: rec {
             pname = "iptsd";

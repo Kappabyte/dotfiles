@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
-
 let
     inherit (lib) mkDefault mkEnableOption mkIf mkMerge;
-
     cfg = config.surface.ipts;
 in {
     options.surface.ipts = {

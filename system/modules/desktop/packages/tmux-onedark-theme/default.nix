@@ -1,4 +1,4 @@
-{ lib, fetchFromGitHub, pkgs, stdenv}: {
+{fetchFromGitHub, pkgs}: {
     onedark-theme = pkgs.tmuxPlugins.mkTmuxPlugin {
         pluginName = "onedark-theme";
         rtpFilePath = "tmux-onedark-theme.tmux";

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
     environment.systemPackages = with pkgs; [
         xdg-ninja
-        (pkgs.callPackage ./packages/khinsider {}) 
+        (callPackage ./packages/khinsider {}) 
         btop
         keepassxc
         unzip

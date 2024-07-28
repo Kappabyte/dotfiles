@@ -8,7 +8,7 @@
 	    globals = {
 	        mapleader = " ";
 	    };
-	    options = {
+	    opts = {
 	        number = true;
             nu = true;
             relativenumber = true;
@@ -121,7 +121,7 @@
             };
             neogit = {
                 enable = true;
-                kind = "floating";
+                settings.kind = "floating";
             };
             noice = {
                 enable = true;

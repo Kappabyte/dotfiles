@@ -1,4 +1,4 @@
-{stdenv, pkgs, lib, ...}: stdenv.mkDerivation {
+{stdenv}: stdenv.mkDerivation {
     pname = "steam-gamescope-desktop";
     version = "0.0.1";
 

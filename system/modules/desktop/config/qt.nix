@@ -2,6 +2,6 @@
     qt = {
         enable = true;
         platformTheme = "gnome";
-        style.name = "adwaita-dark";
+        style = "adwaita-dark";
     };
 }

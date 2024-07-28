@@ -27,9 +27,12 @@
         muse-sounds-manager = {
             url = "github:thilobillerbeck/muse-sounds-manager-nix";
         };
+        matugen = {
+            url = "github:/InioX/Matugen";
+        };
   	};
 
-  	outputs = inputs @ { self, nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, ... }:
+  	outputs = inputs @ { nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, ... }:
 	let
 		user = "avery";
 	in {

@@ -10,9 +10,7 @@ in {
         kitty
         
         mpv
-        (quodlibet-full.override {
-            python3 = python311;
-        })
+        g4music
         obs-studio
         zoom-us
         amberol

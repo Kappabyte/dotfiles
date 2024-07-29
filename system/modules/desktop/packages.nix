@@ -5,7 +5,6 @@ in {
     environment.systemPackages = (with pkgs; [
         gnome.nautilus
         firefox
-        thunderbird
         vesktop
         kitty
         

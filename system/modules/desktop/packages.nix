@@ -6,7 +6,7 @@ in {
         firefox
         thunderbird
         nemo-with-extensions
-        webcord-vencord
+        vesktop
         kitty
         
         mpv

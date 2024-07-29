@@ -1,19 +1,59 @@
-{ config, ... }: {
+{ config, ... }: let
+    type = "dark";
+in {
     programs.matugen = {
         enable = true;
         variant = "dark";
         jsonFormat = "hex";
-        palette = "default";
-
-        templates = {
-            gtk = {
-                input_path = "./templates/gtk.css";
-                output_path = "templates/gtk-4.0/gtk.css";
-            };
-        };
+        wallpaper = ../hyprpaper/wallpaper.png;
     };    
 
-    home.configFile = {
-        "gtk-4.0/gtk.css".source = "${config.programs.matugen.theme.files}/.config/gtk-4.0/gtk.css";
-    };
+    colors.background = config.programs.matugen.theme.colors.colors."${type}".background;
+    colors.error =  config.programs.matugen.theme.colors.colors."${type}".error;
+    colors.error_container = config.programs.matugen.theme.colors.colors."${type}".error_container;
+    colors.inverse_on_surface = config.programs.matugen.theme.colors.colors."${type}".inverse_on_surface;
+    colors.inverse_primary = config.programs.matugen.theme.colors.colors."${type}".inverse_primary;
+    colors.inverse_surface = config.programs.matugen.theme.colors.colors."${type}".inverse_surface;
+    colors.on_background = config.programs.matugen.theme.colors.colors."${type}".on_background;
+    colors.on_error = config.programs.matugen.theme.colors.colors."${type}".on_error;
+    colors.on_error_container = config.programs.matugen.theme.colors.colors."${type}".on_error_container;
+    colors.on_primary = config.programs.matugen.theme.colors.colors."${type}".on_primary;
+    colors.on_primary_container = config.programs.matugen.theme.colors.colors."${type}".on_primary_container;
+    colors.on_primary_fixed = config.programs.matugen.theme.colors.colors."${type}".on_primary_fixed;
+    colors.on_primary_fixed_variant = config.programs.matugen.theme.colors.colors."${type}".on_primary_fixed_variant;
+    colors.on_secondary = config.programs.matugen.theme.colors.colors."${type}".on_secondary;
+    colors.on_secondary_container = config.programs.matugen.theme.colors.colors."${type}".on_secondary_container;
+    colors.on_secondary_fixed = config.programs.matugen.theme.colors.colors."${type}".on_secondary_fixed;
+    colors.on_secondary_fixed_variant = config.programs.matugen.theme.colors.colors."${type}".on_secondary_fixed_variant;
+    colors.on_surface = config.programs.matugen.theme.colors.colors."${type}".on_surface;
+    colors.on_surface_variant = config.programs.matugen.theme.colors.colors."${type}".on_surface_variant;
+    colors.on_tertiary = config.programs.matugen.theme.colors.colors."${type}".on_tertiary;
+    colors.on_tertiary_container = config.programs.matugen.theme.colors.colors."${type}".on_tertiary_container;
+    colors.on_tertiary_fixed = config.programs.matugen.theme.colors.colors."${type}".on_tertiary_fixed;
+    colors.on_tertiary_fixed_variant = config.programs.matugen.theme.colors.colors."${type}".on_tertiary_fixed_variant;
+    colors.outline = config.programs.matugen.theme.colors.colors."${type}".outline;
+    colors.outline_variant = config.programs.matugen.theme.colors.colors."${type}".outline_variant;
+    colors.primary = config.programs.matugen.theme.colors.colors."${type}".primary;
+    colors.primary_container = config.programs.matugen.theme.colors.colors."${type}".primary_container;
+    colors.primary_fixed = config.programs.matugen.theme.colors.colors."${type}".primary_fixed;
+    colors.primary_fixed_dim = config.programs.matugen.theme.colors.colors."${type}".primary_fixed_dim;
+    colors.scrim = config.programs.matugen.theme.colors.colors."${type}".scrim;
+    colors.secondary = config.programs.matugen.theme.colors.colors."${type}".secondary;
+    colors.secondary_container = config.programs.matugen.theme.colors.colors."${type}".secondary_container;
+    colors.secondary_fixed = config.programs.matugen.theme.colors.colors."${type}".secondary_fixed;
+    colors.secondary_fixed_dim = config.programs.matugen.theme.colors.colors."${type}".secondary_fixed_dim;
+    colors.shadow = config.programs.matugen.theme.colors.colors."${type}".shadow;
+    colors.surface = config.programs.matugen.theme.colors.colors."${type}".surface;
+    colors.surface_bright = config.programs.matugen.theme.colors.colors."${type}".surface_bright;
+    colors.surface_container = config.programs.matugen.theme.colors.colors."${type}".surface_container;
+    colors.surface_container_high = config.programs.matugen.theme.colors.colors."${type}".surface_container_high;
+    colors.surface_container_highest = config.programs.matugen.theme.colors.colors."${type}".surface_container_highest;
+    colors.surface_container_low = config.programs.matugen.theme.colors.colors."${type}".surface_container_low;
+    colors.surface_container_lowest = config.programs.matugen.theme.colors.colors."${type}".surface_container_lowest;
+    colors.surface_dim = config.programs.matugen.theme.colors.colors."${type}".surface_dim;
+    colors.surface_variant = config.programs.matugen.theme.colors.colors."${type}".surface_variant;
+    colors.tertiary = config.programs.matugen.theme.colors.colors."${type}".tertiary;
+    colors.tertiary_container = config.programs.matugen.theme.colors.colors."${type}".tertiary_container;
+    colors.tertiary_fixed = config.programs.matugen.theme.colors.colors."${type}".tertiary_fixed;
+    colors.tertiary_fixed_dim = config.programs.matugen.theme.colors.colors."${type}".tertiary_fixed;
 }

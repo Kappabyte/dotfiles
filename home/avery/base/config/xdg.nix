@@ -1,4 +1,4 @@
-{ config, lib, inputs, pkgs, user, home-manager, ... }: {
+{ config, lib, ... }: {
     xdg = {
         enable = true;
         userDirs = {
@@ -10,8 +10,7 @@
             pictures = "/home/avery/pictures";
             videos = "/home/avery/videos";
             desktop = "$HOME";
-            publicShare = "/home/avery/games";
-            templates = "/home/avery/code";
+            templates = "/home/avery/.templates";
         };
         dataHome = "${config.home.homeDirectory}/.local/share";
         configHome = "${config.home.homeDirectory}/.config";

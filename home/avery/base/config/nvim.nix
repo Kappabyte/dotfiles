@@ -71,6 +71,7 @@
                     "<leader>pf" = "find_files";
                     "<leader>gf" = "git_files";
                     "<leader>ps" = "live_grep";
+                    "<leader>mm" = "harpoon marks";
                 };
             };
             neo-tree = {
@@ -93,8 +94,14 @@
                         installRustc = true;
                         installCargo = true;
                     };
-                    tsserver.enable = true;
                     ccls.enable = true;
+                    tsserver.enable = true;
+                };
+            };
+            typescript-tools = {
+                enable = true;
+                settings = {
+                    exposeAsCodeAction = "all";
                 };
             };
             cmp = {
@@ -117,6 +124,24 @@
                         {name = "path";}
                         {name = "buffer";}
                     ];
+                };
+            };
+            fzf-lua = {
+                enable = true;
+                keymaps = {
+                    "<leader>ca".action = "lsp_code_actions";
+                    "<leader>cd".action= "lsp_definitions";
+                    "<leader>cu".action= "lsp_references";
+                    "<leader>bs".action= "lsp_document_symbols";
+                };
+            };
+            harpoon = {
+                enable = true;
+                enableTelescope = true;
+                keymaps = {
+                    addFile = "<leader>a";
+                    navNext = "<leader>n";
+                    navPrev = "<leader>p";
                 };
             };
             neogit = {

@@ -20,7 +20,7 @@ in {
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users = (import ../../home/desktop.nix {
+                home-manager.users = (import ../../home/enterprise.nix {
                     inherit lib inputs pkgs user home-manager;
                 });
                 home-manager.extraSpecialArgs = {
@@ -40,7 +40,7 @@ in {
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users = (import ../../home/oldlaptop.nix {
+                home-manager.users = (import ../../home/defiant.nix {
                     inherit lib inputs pkgs user home-manager;
                 });
                 home-manager.extraSpecialArgs = {
@@ -61,7 +61,7 @@ in {
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users = (import ../../home/laptop.nix {
+                home-manager.users = (import ../../home/voyager.nix {
                     inherit lib inputs pkgs user home-manager;
                 });
                 home-manager.extraSpecialArgs = {
@@ -83,7 +83,7 @@ in {
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users = (import ../../home/desktop.nix {
+                home-manager.users = (import ../../home/enterprise.nix {
                     inherit lib inputs pkgs user home-manager;
                 });
                 home-manager.extraSpecialArgs = {

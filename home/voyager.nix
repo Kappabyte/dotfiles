@@ -6,7 +6,7 @@
             inputs.ags.homeManagerModules.default
             inputs.matugen.nixosModules.default
             ./avery/base
-            ./avery/laptop
+            ./avery/voyager
         ];
     };
 }

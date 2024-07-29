@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{ pkgs, lib, inputs, ... }: {
     avery = { 
         imports = [
             ./modules/color.nix
@@ -6,7 +6,7 @@
             inputs.ags.homeManagerModules.default
             inputs.matugen.nixosModules.default
             ./avery/base
-            ./avery/desktop
+            ./avery/defiant
         ];
     };
 }

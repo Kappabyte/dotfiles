@@ -166,6 +166,15 @@
             }
 
             require('onedark').load()
+
+            vim.keymap.set('n', '<leader>oo', function() 
+                vim.lsp.buf.code_action({
+                    apply = true;
+                    filter = function(i)
+                        return string.sub(string.lower(i.title), 1, 3) == "org";
+                    end
+                });
+            end)
         '';
         keymaps = [
             {

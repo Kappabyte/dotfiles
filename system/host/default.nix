@@ -9,14 +9,14 @@ let
 
     lib = nixpkgs.lib;
 in {
-    desktop = lib.nixosSystem {
+    enterprise = lib.nixosSystem {
         inherit system;
         specialArgs = {
             inherit inputs user system;
-            hostName = "desktop";
+            hostName = "enterprise";
         };
         modules = [
-            ./desktop
+            ./enterprise
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
@@ -29,14 +29,14 @@ in {
             }
         ];
     };
-    oldlaptop = lib.nixosSystem {
+    defiant = lib.nixosSystem {
         inherit system;
         specialArgs = {
             inherit inputs user system;
-            hostName = "oldlaptop";
+            hostName = "defiant";
         };
         modules = [
-            ./oldlaptop
+            ./defiant
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
@@ -49,15 +49,15 @@ in {
             }
         ];
     };
-    laptop = lib.nixosSystem {
+    voyager = lib.nixosSystem {
         inherit system;
         specialArgs = {
             inherit inputs user system;
-            hostName = "laptop";
+            hostName = "voyager";
         };
         modules = [
             nixos-hardware.nixosModules.microsoft-surface-pro-intel
-            ./laptop
+            ./voyager
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
@@ -70,16 +70,16 @@ in {
             }
         ];
     };
-    usb = lib.nixosSystem {
+    discovery = lib.nixosSystem {
         inherit system;
         specialArgs = {
             inherit inputs user system;
             host = {
-                hostName = "usb";
+                hostName = "discovery";
             };
         };
         modules = [
-            ./usb
+            ./discovery
             home-manager.nixosModules.home-manager {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;

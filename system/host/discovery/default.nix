@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, hostName, ... }: {
     imports = [
         # Set up hardware
         ./hardware/network.nix
@@ -24,7 +24,7 @@
         # Add Users
         ../../users/avery.nix
     ];
-    networking.hostName = "avery-usb";
+    networking.hostName = hostName;
 
     boot.loader = {
 	efi = {

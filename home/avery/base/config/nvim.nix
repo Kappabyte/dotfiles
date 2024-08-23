@@ -96,8 +96,10 @@
                     };
                     ccls.enable = true;
                     tsserver.enable = true;
+                    zls.enable = true;
                 };
             };
+            zig.enable = true;
             typescript-tools = {
                 enable = true;
                 settings = {

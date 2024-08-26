@@ -6,6 +6,7 @@ in {
         variant = "dark";
         jsonFormat = "hex";
         wallpaper = ../hyprpaper/wallpaper.png;
+        templates = {};
     };    
 
     colors.background = config.programs.matugen.theme.colors.colors."${type}".background;

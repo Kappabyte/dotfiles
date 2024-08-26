@@ -4,7 +4,6 @@ let
 in {
     environment.systemPackages = (with pkgs; [
         gnome.nautilus
-        firefox
         vesktop
         kitty
         

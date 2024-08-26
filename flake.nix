@@ -28,7 +28,8 @@
             url = "github:thilobillerbeck/muse-sounds-manager-nix";
         };
         matugen = {
-            url = "github:/InioX/Matugen";
+            url = "github:/InioX/Matugen?rev=1d09b15b4fa63b16e2a63c47c835c87ecc78ee38";
+			inputs.nixpkgs.follows = "nixpkgs";
         };
   	};
 

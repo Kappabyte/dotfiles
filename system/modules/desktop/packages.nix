@@ -3,7 +3,7 @@ let
     muse-sounds-manager = inputs.muse-sounds-manager; 
 in {
     environment.systemPackages = (with pkgs; [
-        gnome.nautilus
+        nautilus
         vesktop
         kitty
         

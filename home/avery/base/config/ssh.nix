@@ -18,5 +18,11 @@
             port=22;
             identityFile="~/.ssh/ucalgary";
         };
+        "oracle" = {
+            user="opc";
+            hostname="155.248.220.19";
+            port=22;
+            identityFile="~/.ssh/oracle.key";
+        };
     };
 }

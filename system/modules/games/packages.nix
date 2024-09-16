@@ -13,7 +13,7 @@
         cemu
         mangohud
         (callPackage ./packages/yuzu {}) 
-        (callPackage ./packages/ryujinx {}) 
+        ryujinx
         steamtinkerlaunch
         (prismlauncher.override {additionalLibs = [ 
             xorg.libXtst 

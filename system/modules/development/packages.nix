@@ -4,6 +4,7 @@
         blender
         krita
         lmms
+        carla
 
         # Generic Programming
         vscode

@@ -10,6 +10,8 @@
     module.games.enable = true;
     module.tools.enable = true;
 
+    programs.streamcontroller.enable = true;
+
     ## Set the hostname
     networking.hostName = hostName;
 }

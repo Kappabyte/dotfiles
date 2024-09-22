@@ -11,6 +11,12 @@
             ];
         })
         cemu
+        _2ship2harkinian
+        shipwright
+        dolphin-emu
+        retroarchFull
+        steam-rom-manager
+
         mangohud
         (callPackage ./packages/yuzu {}) 
         ryujinx

@@ -1,4 +1,4 @@
-{lib, pkgs, config}: {
+{ ... }: {
     services.syncthing = {
         enable = true;
         user = "avery";

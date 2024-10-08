@@ -27,10 +27,7 @@
         muse-sounds-manager = {
             url = "github:thilobillerbeck/muse-sounds-manager-nix";
         };
-        inputs = {
-            nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-            stylix.url = "github:danth/stylix";
-        };
+        stylix.url = "github:danth/stylix";
   	};
 
   	outputs = inputs @ { nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, stylix, ... }:

@@ -1,7 +1,9 @@
 { pkgs, ... }: {
     stylix = {
         enable = true;    
-        stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+        image = ../../../../home/avery/base/config/hyprpaper/wallpaper.png;
+        polarity = "dark";
         cursor = {
             package = pkgs.vanilla-dmz;
             name = "Vanilla-DMZ";
@@ -25,6 +27,7 @@
                 name = "Noto Serif";
             };
         };
+        targets.fish.enable = false;
     };
 }
 

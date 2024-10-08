@@ -1,13 +1,17 @@
-{ config, pkgs, lib, hostName, ... }: {
+{ lib, hostName, ... }: with lib; let
+    getDir = dir: mapAttrs(file: type: if type == "directory" then type + "/default.nix" else type)(builtins.readDir dir);
+    files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
+    validFiles = dir: map(file: dir + "/${file}")(filter(file: hasSuffix ".nix" file && file != "default.nix")(files dir));
+in {
     imports = [
-        ../../modules
-    ] ++ lib.optional (builtins.pathExists ./packages.nix) ./packages.nix
-      ++ lib.optional (builtins.pathExists ./hardware) ./hardware;
-
-    module.base.enable = true;
-    module.desktop.enable = true;
-    module.development.enable = true;
-    module.tools.enable = true;
+        ../../modules/base
+        ../../modules/desktop
+        ../../modules/development
+        ../../modules/tools
+        ../../modules/base
+    ] ++ (if (builtins.pathExists ./packages.nix) then [./packages.nix] else [])
+      ++ (if (builtins.pathExists ./config) then (validFiles ./config) else [])
+      ++ (if (builtins.pathExists ./hardware) then (validFiles ./hardware) else []);
 
     ## Set the hostname
     networking.hostName = hostName;

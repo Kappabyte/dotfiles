@@ -23,7 +23,6 @@
         xdg-user-dirs
         gnome.gnome-keyring
         papirus-folders
-        catppuccin-cursors.mochaLight
     ];
 
     # Force electron applications to use wayland

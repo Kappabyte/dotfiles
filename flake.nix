@@ -27,16 +27,20 @@
         muse-sounds-manager = {
             url = "github:thilobillerbeck/muse-sounds-manager-nix";
         };
+        inputs = {
+            nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+            stylix.url = "github:danth/stylix";
+        };
   	};
 
-  	outputs = inputs @ { nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, ... }:
+  	outputs = inputs @ { nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, stylix, ... }:
 	let
 		user = "avery";
 	in {
 		nixosConfigurations = (
 			import ./system/host {
 				inherit (nixpkgs) lib;
-				inherit inputs nixpkgs user home-manager nixos-hardware muse-sounds-manager;
+				inherit inputs nixpkgs user home-manager nixos-hardware muse-sounds-manager stylix;
 			}
 		);
 	};

@@ -19,7 +19,7 @@
 
         mangohud
         (callPackage ./packages/yuzu {}) 
-        (callPackage ./packages/sudachi {}) 
+        (qt6Packages.callPackage ./packages/sudachi {}) 
         ryujinx
         steamtinkerlaunch
         (prismlauncher.override {additionalLibs = [ 

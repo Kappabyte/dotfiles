@@ -47,6 +47,8 @@ in {
         alsa-oss
         faudio
         zenity
+
+        niri
     ]) ++ [
         muse-sounds-manager.packages.x86_64-linux.muse-sounds-manager
     ];

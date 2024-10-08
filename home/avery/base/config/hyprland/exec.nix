@@ -6,6 +6,7 @@
         "antimicrox --hidden"
         "ulauncher --no-window-shadow --hide-window"
         "vesktop --start-minimized"
+        "streamcontroller -b"
 
 
         "hyprctl dispatch workspace 1"

@@ -3,8 +3,9 @@
         godot_4
         blender
         krita
-        lmms
-        carla
+        ardour
+        yabridge
+        sfizz
 
         # Generic Programming
         vscode

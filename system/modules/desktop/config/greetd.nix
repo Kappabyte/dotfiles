@@ -1,7 +1,5 @@
-{pkgs, config, ...}: let 
-    wallpaper = ./wallpaper.jpg;
-    sessions = (if config.module.desktop.enable == true then "${pkgs.hyprland}/share/wayland-sessions:" else "") + 
-               (if config.module.games.enable == true then "${(pkgs.callPackage ../../games/packages/steam-gamescope {})}/share/wayland-sessions:" else "");
+{lib, pkgs, config, ...}: let 
+    sessions = lib.strings.concatStringsSep ":" (map (package: "${package}/share/wayland-sessions")(config.properties.wayland-sessions.session-list));
 in {
     services.greetd = {
         enable = true;

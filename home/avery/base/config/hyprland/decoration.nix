@@ -6,8 +6,6 @@
             gaps_in = 5;
             gaps_out = 20;
             border_size = 2;
-            "col.active_border" = "rgba(61AFEFFF)";
-            "col.inactive_border" = "rgba(ABB2BFFF)";
 
             layout = "dwindle";
         };
@@ -24,7 +22,6 @@
             drop_shadow = true;
             shadow_range = 0;
             shadow_render_power = 0;
-            "col.shadow" = "rgba(00000000)";
         };
         animations = {
             enabled = true;

@@ -112,7 +112,6 @@
             cmp = {
                 enable = true;
                 settings = {
-                    snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
                     completion.completeopt = "noselect";
                     preselect = "None";
                     mapping = {
@@ -159,18 +158,9 @@
         };
         extraPlugins = with pkgs.vimPlugins; [
             octo-nvim
-            onedark-nvim
         ];
         extraConfigLua = ''
             require"octo".setup()
-            require('onedark').setup {
-                transparent = true,
-                lualine = {
-                    transparent = true;
-                }
-            }
-
-            require('onedark').load()
 
             vim.keymap.set('n', '<leader>oo', function() 
                 vim.lsp.buf.code_action({
@@ -188,15 +178,4 @@
             }
         ];
     };
-
-    home.packages = with pkgs; [
-        ripgrep
-    ];
-    
-    #programs.nixvim = {
-    #    extraConfigLua = ''
-    #        -- Print a little welcome message when nvim is opened!
-    #        print("Hello world!")
-    #    '';
-    #};
 }

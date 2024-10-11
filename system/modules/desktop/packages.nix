@@ -10,7 +10,6 @@ in {
         mpv
         g4music
         obs-studio
-        zoom-us
         amberol
         gthumb
         pavucontrol

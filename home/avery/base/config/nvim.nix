@@ -28,6 +28,9 @@
             scrolloff = 8;
             updatetime = 50;
 	    };
+        colorschemes = {
+            gruvbox.enable = true;
+        };
         plugins = {
             lualine = {
                 enable = true;

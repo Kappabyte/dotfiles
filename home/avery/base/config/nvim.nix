@@ -1,4 +1,4 @@
-{pkgs, config, ...}: {
+{pkgs, config, inputs, ...}: {
     home.sessionVariables = {
         EDITOR = "nvim";
     };
@@ -102,7 +102,10 @@
                     };
                     ccls.enable = true;
                     tsserver.enable = true;
-                    zls.enable = true;
+                    zls = {
+                        enable = true;
+                        package = inputs.zls.packages.x86_64-linux.default;
+                    };
                 };
             };
             zig.enable = true;

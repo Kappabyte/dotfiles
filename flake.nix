@@ -28,6 +28,7 @@
             url = "github:thilobillerbeck/muse-sounds-manager-nix";
         };
         stylix.url = "github:danth/stylix";
+        zls.url = "github:Kappabyte/zls";
   	};
 
   	outputs = inputs @ { nixpkgs, home-manager, nixos-hardware, muse-sounds-manager, stylix, ... }:
